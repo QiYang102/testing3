@@ -552,7 +552,7 @@ body.no-scroll {
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    min-width: 80%;
+    min-width: 93%;
     margin: 0 auto 36px;
     border-radius: 16px;
   }
