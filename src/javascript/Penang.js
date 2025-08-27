@@ -806,105 +806,105 @@ const FAV_KEY = "favouriteFoods";
 // === FOOD DATA ===
 const foodItems = [
   {
-    id: "1",
+    id: "pg1",
     name: "Asam Laksa",
     image: "elements/image/images-penang/mef/main-dishes/asam-laksa.png",
     desc: "Spicy and sour fish noodle soup with tamarind, mint, and chili. A true Penang original.",
     category: "main-dishes"
   },
   {
-    id: "2",
+    id: "pg2",
     name: "Char Kway Teow",
     image: "elements/image/images-penang/mef/main-dishes/char-kuey-teow.png",
     desc: "Stir-fried flat rice noodles with egg, prawns, bean sprouts, and dark soy sauce.",
     category: "main-dishes"
   },
   {
-    id: "3",
+    id: "pg3",
     name: "Hokkien Mee (Penang Prawn Mee)s",
     image: "elements/image/images-penang/mef/main-dishes/hokkien-mee.png",
     desc: "Thick noodles braised in a rich, dark broth with pork, squid, and hard-boiled egg.",
     category: "main-dishes"
   },
   {
-    id: "4",
+    id: "pg4",
     name: "Cendol",
     image: "elements/image/images-penang/mef/beverage/cendol.png",
     desc: "Iced dessert with green jelly, coconut milk, palm sugar, and red beans.",
     category: "beverages"
   },
   {
-    id: "5",
+    id: "pg5",
     name: "Lime Juice with Soda (Limau Ais Campur)",
     image: "elements/image/images-penang/mef/beverage/Lime-Juice.png",
     desc: "Freshly squeezed lime with sugar and soda — tangy, fizzy, and ultra-refreshing.",
     category: "beverages"
   },
   {
-    id: "6",
+    id: "pg6",
     name: "Apom Manis",
     image: "elements/image/images-penang/mef/snacks/apom-manis.png",
     desc: "Soft, fluffy pancakes made from fermented rice batter, topped with sugar and grated coconut.",
     category: "snacks"
   },
   {
-    id: "7",
+    id: "pg7",
     name: "Onde-Onde (Kuih Koci)",
     image: "elements/image/images-penang/mef/snacks/onde-onde.png",
     desc: "Sticky rice balls filled with palm sugar and rolled in grated coconut — sweet, warm, and fragrant.",
     category: "snacks"
   },
   {
-    id: "8",
+    id: "pg8",
     name: "Kuih Bahulu",
     image: "elements/image/images-penang/mef/snacks/kuih-bahulu.png",
     desc: "Mini sponge cakes with a soft, bouncy texture, baked in flower- shaped molds.",
     category: "snacks"
   },
   {
-    id: "9",
+    id: "pg9",
     name: "Tau Hu Goreng (Fried Tofu with Peanut Sauce)",
     image: "elements/image/images-penang/mef/sides/tahuGoreng.png",
     desc: "Crispy fried tofu served with a warm, savory peanut sauce and chili.",
     category: "sides"
   },
   {
-    id: "10",
+    id: "pg10",
     name: "Otak-Otak",
     image: "elements/image/images-penang/mef/sides/Otak-Otak.png",
     desc: "Spiced fish mousse grilled in banana leaf — aromatic, soft, and smoky.",
     category: "sides"
   },
   {
-    id: "11",
+    id: "pg11",
     name: "Nasi Kandar",
     image: "elements/image/images-penang/mef/main-dishes/nasi-kandar.png",
     desc: "Steamed rice served with a variety of curries, fried chicken, squid, and gravy.",
     category: "main-dishes"
   },
   {
-    id: "12",
+    id: "pg12",
     name: "Rojak",
     image: "elements/image/images-penang/mef/sides/rojak.png",
     desc: "Fruit and fritter salad with a sweet, spicy palm sugar and shrimp paste dressing.",
     category: "sides"
   },
   {
-    id: "13",
+    id: "pg13",
     name: "Chee Cheong Fun",
     image: "elements/image/images-penang/mef/sides/chee-cheong-fun.png",
     desc: "Rice noodle rolls filled with shrimp or char siu, served with sweet soy and chili sauce.",
     category: "sides"
   },
   {
-    id: "14",
+    id: "pg14",
     name: "Roti Canai",
     image: "elements/image/images-penang/mef/sides/roti-canai.png",
     desc: "Flaky flatbread served with dhal or curry for dipping — a Malaysian staple.",
     category: "sides"
   },
   {
-    id: "15",
+    id: "pg15",
     name: "Ice Kacang",
     image: "elements/image/images-penang/mef/beverage/ice-kacang.png",
     desc: "Shaved ice mountain topped with sweet syrups, fruits, beans, and condensed milk.",

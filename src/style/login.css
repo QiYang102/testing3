@@ -127,7 +127,8 @@ nav {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 200px;
+  margin-bottom: 200px;
 }
 
 
@@ -258,6 +259,27 @@ hr {
   margin: 8px auto;
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    color: #666;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #FF6B35;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 /* Phone */
 @media (max-width: 768px) {
 
@@ -346,7 +368,7 @@ hr {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 0px;
+    margin-top: 100px;
   }
 
   .container>img {

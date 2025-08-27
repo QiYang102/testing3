@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Kedah</title>
+  <link href="style/Kedahcss.css" rel="stylesheet">
+  <script src="javascript/Kedahjs.js" defer></script>
+  <link rel="icon" href="elements/image/Title-logo.png" type="image/png">
+
+</head>
+
+<body>
+  <!-- Section 1 -->
+  <header>
+    <nav class="site-nav">
+      <div class="logo">
+        <img id="logoE" src="elements/image/image 27.png">
+      </div>
+
+      <!-- NEW: mobile toggle button -->
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+      <!-- WRAP existing links -->
+      <div class="links nav-panel">
+        <a href="main2.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="login.html">Login</a>
+
+        <div class="menu">
+          <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
+          <div class="menu-list" role="menu">
+            <a role="menuitem" href="perak.html">Perak</a>
+            <a role="menuitem" href="Penang.html">Penang</a>
+            <a role="menuitem" href="Kedah.html">Kedah</a>
+            <a role="menuitem" href="kelantan.html">Kelantan</a>
+          </div>
+        </div>
+
+
+        <div class="menu">
+          <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>
+          <div class="menu-list" role="menu">
+            <a role="menuitem" href="favourite.html">Favourite</a>
+            <a role="menuitem" href="ranking.html">Best Food in 2025</a>
+            <a role="menuitem" href="quiz.html">Quiz</a>
+            <a role="menuitem" href="restaurants.html">Restaurants</a>
+            <a role="menuitem" href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Row 3: Hero image -->
+    <div class="hero">
+      <img src="elements/image/images-kedah/Kedah Pic.jpg" alt="Kedah view">
+      <h1 class="hero-title">KEDAH</h1>
+      <div class="fade"></div>
+    </div>
+  </header>
+
+
+
+
+  <!-- Section 2 -->
+  <section class="section-2">
+    <!-- Row 1: Title -->
+    <h2 class="section-title">BACKGROUND</h2>
+
+    <!-- Row 2: Card -->
+    <div class="info-card">
+      <div class="card-media">
+        <img src="elements/image/images-kedah/bg/kedah bg 1.png" alt="Kedah background">
+      </div>
+
+      <div class="card-body">
+        <p class="type-on-view"
+          data-text="The beginning of Kedah does not lie in rice but in iron. Over 2,000 years ago, the Sungai Batu Archaeological Complex was a successful one of Southeast Asia's earliest urban centers. Furnaces used to smelt iron, slag heaps, and workshops are evidence that confirm Kedah as an early iron master. This industry propelled vibrant trade networks that connected Kedah with India, China, and the Middle East, and it was a center of global commerce commercially much earlier than most other societies within the region.">
+        </p>
+      </div>
+
+      <!-- Row 3: Buttons -->
+      <div class="card-footer">
+        <button id="bgPrev" class="btn btn-dark">Previous</button>
+        <button id="bgNext" class="btn btn-dark">Next</button>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+
+
+
+
+  <!-- Section 3 -->
+  <section class="section-3">
+    <h2 class="section-title">MUST-GO PLACES</h2>
+
+    <div class="carousel" id="placesCarousel">
+      <div class="slides"></div>
+    </div>
+
+    <!-- Details card for the active slide -->
+    <article class="place-card" id="placeCard"></article>
+  </section>
+
+
+
+
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+
+
+
+
+  <!-- Section 4 -->
+  <section class="section-4">
+    <h2 class="section-title">MUST-EAT FOOD</h2>
+
+    <div class="food-hero" id="foodHero">
+      <img class="food-bg" id="foodBg" src="" alt="" aria-hidden="true">
+
+      <!-- LEFT: options -->
+      <nav class="food-tabs">
+        <button class="food-tab is-active" data-cat="main">Main Dishes</button>
+        <button class="food-tab" data-cat="beverages">Beverages</button>
+        <button class="food-tab" data-cat="snacks">Snacks</button>
+        <button class="food-tab" data-cat="sides">Side Dishes</button>
+      </nav>
+
+      <!-- MIDDLE: food -->
+      <div class="food-stage">
+        <h3 class="food-name" id="foodName"></h3>
+        <div class="food-plate">
+          <img id="foodImg" alt="" draggable="false">
+        </div>
+      </div>
+
+      <!-- RIGHT: empty -->
+      <div class="food-empty" aria-hidden="true"></div>
+
+      <!-- DIVIDERS -->
+      <div class="divider at-col-2" aria-hidden="true"></div>
+      <div class="divider at-col-3" aria-hidden="true"></div>
+
+      <!-- BOTTOM: controls -->
+      <div class="food-controls">
+        <button id="foodPrev" class="btn ghost">PREV</button>
+        <div class="food-progress"><span></span></div>
+        <button id="foodNext" class="btn ghost">NEXT</button>
+      </div>
+    </div>
+
+    <!-- ======= INFO AREA (namespaced) ======= -->
+    <div class="food-info">
+      <h3 id="foodTitle" class="food-info-name"></h3>
+
+      <div id="foodTags" class="food-tag-row"></div>
+
+      <div class="food-info-grid">
+        <div class="food-info-card" id="sec-desc">
+          <h4>Description</h4>
+          <p id="foodText"></p>
+        </div>
+
+        <div class="food-info-card" id="sec-ingr">
+          <h4>Ingredients</h4>
+          <ul class="food-list" id="foodIngr"></ul>
+        </div>
+
+        <div class="food-info-card" id="sec-taste">
+          <h4>Taste / Profile</h4>
+          <p id="foodTaste"></p>
+        </div>
+
+        <div class="food-info-card" id="sec-origin">
+          <h4>Origin</h4>
+          <p id="foodOrigin"></p>
+        </div>
+
+        <div class="food-info-card" id="sec-pair">
+          <h4>Best Paired With</h4>
+          <p id="foodPair"></p>
+        </div>
+
+        <div class="food-info-card" id="sec-price">
+          <h4>Price</h4>
+          <p class="food-price" id="foodPrice"></p>
+        </div>
+
+        <div class="food-info-card" id="sec-nutri" style="grid-column:1/-1">
+          <h4>Nutrition (per serving)</h4>
+          <table class="food-nutrition" id="foodNutri"></table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+
+
+  <!-- New Section - Food List -->
+  <section class="food-list">
+    <h2 class="section-title">FOOD LIST</h2>
+
+    <div class="filter-tabs">
+      <span class="tab active" data-filter="all">ALL</span>
+      <span class="tab" data-filter="main-dishes">Main Dishes</span>
+      <span class="tab" data-filter="beverages">Beverages</span>
+      <span class="tab" data-filter="snacks">Snacks</span>
+      <span class="tab" data-filter="sides">Sides</span>
+    </div>
+
+    <div class="food-grid" id="foodGrid">
+      <!-- Food items will be injected here by JavaScript -->
+    </div>
+  </section>
+
+  <!-- jQuery (needed for favourite.js AJAX) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Favourite handling -->
+  <script src="javascript/favourite.js" defer></script>
+
+  <!-- Page-specific logic -->
+  <script src="javascript/Kedahjs.js" defer></script>
+
+
+
+
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+
+
+
+  <!-- Section 5 -->
+  <section class="section-5">
+    <h2 class="section-title">COMMENTS</h2>
+
+    <!-- rotating top comment -->
+    <div class="comment-carousel" id="commentCarousel" aria-live="polite">
+      <article class="comment-card" id="commentCard"></article>
+    </div>
+
+    <!-- nav buttons -->
+    <div class="comment-nav">
+      <button class="nav-btn" id="prevComment">‹ Prev</button>
+      <button class="nav-btn" id="nextComment">Next ›</button>
+    </div>
+
+    <!-- comment button -->
+    <button class="btn comment-cta" id="openComment">Comment</button>
+
+    <!-- write box (collapsed by default) -->
+    <div class="comment-form" id="commentForm" hidden>
+      <div class="comment-input-wrap">
+        <textarea id="commentInput" rows="5" placeholder="Write your comment..."></textarea>
+      </div>
+      <div class="comment-actions">
+        <button class="btn ghost" id="cancelComment">Cancel</button>
+        <button class="btn ghost" id="sendComment">Send</button>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
+    <p>© 2025 Makan Island. All rights reserved.</p>
+    <p><a href="privacy-policy.html">Privacy Policy</a> • <a href="terms-of-use.html">Terms of Use</a></p>
+  </footer>
+
+  <script src="javascript/cookie.js"></script>
+
+</body>
+
+</html>

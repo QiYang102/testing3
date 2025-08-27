@@ -11,6 +11,74 @@ body {
   font-family: "Mona Sans";
 }
 
+/* Cookie banner */
+.cookie-banner {
+  position: fixed;
+  inset: auto 16px 16px 16px; /* bottom bar with margins */
+  z-index: 9999;
+  display: none; /* controlled via [hidden] attribute in HTML */
+  font-family: system-ui, -apple-system, "Mona Sans", Arial, sans-serif;
+}
+.cookie-banner:not([hidden]) { display: block; }
+
+.cookie-inner {
+  background: #111;
+  color: #fff;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+}
+
+.cookie-inner h3 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+}
+
+.cookie-inner p {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.cookie-actions .btn {
+  appearance: none;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.cookie-actions .btn.primary {
+  background: #10b981; /* emerald */
+  border-color: #10b981;
+  color: #072b1e;
+}
+.cookie-actions .btn:hover { filter: brightness(1.05); }
+
+.cookie-inner .note {
+  display: block;
+  color: #bbb;
+  font-size: 12px;
+}
+
+/* Phone tweak */
+@media (max-width: 600px) {
+  .cookie-inner { padding: 14px; }
+}
+
+
+
+
+
 /* Desktops */
 @media (max-width: 2560px) {
   .main-content {

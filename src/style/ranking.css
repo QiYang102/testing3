@@ -164,13 +164,15 @@ nav {
   /* compact padding */
   box-sizing: border-box;
   width: max-content;
+  height: 400px;
   /* content defines width for horizontal scroll */
 }
 
 /* --- 700px card with 70% photo / 30% text --- */
 .slide {
-  width: 700px;
+  width: 600px;
   max-width: 90vw;
+  height: 400px;
   height: var(--card-h);
   display: flex;
   flex-direction: column;
@@ -184,17 +186,17 @@ nav {
 
 /* photo = 70% of card height */
 .slide .photo {
-  flex: 0 0 70%;
-  width: 100%;
-  height: auto;
+  width: 700px;
+  height: 300px;
   /* height comes from flex-basis */
 }
 
 .slide .photo img {
-  width: 100%;
-  height: 100%;
+  width: 700px;
+  height: 300px;
   object-fit: cover;
   display: block;
+  overflow: hidden;
 }
 
 /* ensure texts are visible even if previously hidden */
@@ -240,6 +242,26 @@ nav {
   pointer-events: none;
   z-index: 2;
 }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+    background: #f9f5f0;
+    backdrop-filter: blur(10px);
+    font-size: .95rem;
+}
+
+footer a {
+    color: #FF6B35;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 
 /* Phone */
 @media (max-width: 768px) {

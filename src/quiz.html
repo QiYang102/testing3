@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Makan Island • Quiz</title>
+  <link rel="icon" href="elements/image/Title-logo.png" type="image/png">
+  <link rel="stylesheet" href="style/quiz.css" />
+</head>
+
+<body>
+  <!-- ======= Navigation ======= -->
+  <nav>
+    <div class="logo">
+      <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
+    </div>
+
+    <!-- NEW: mobile toggle button -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <!-- WRAP existing links -->
+    <div class="links nav-panel">
+      <a href="main2.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="login.html">Login</a>
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="perak.html">Perak</a>
+          <a role="menuitem" href="penang.html">Penang</a>
+          <a role="menuitem" href="kedah.html">Kedah</a>
+          <a role="menuitem" href="kelantan.html">Kelantan</a>
+        </div>
+      </div>
+
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="favourite.html">Favourite</a>
+          <a role="menuitem" href="ranking.html">Best Food in 2025</a>
+          <a role="menuitem" href="quiz.html">Quiz</a>
+          <a role="menuitem" href="restaurants.html">Restaurants</a>
+          <a role="menuitem" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Top status bar (timer + progress) -->
+  <header class="topbar" role="banner">
+    <div class="brand">
+      <h1>Malaysia Food & Culture Quiz</h1>
+    </div>
+    <div class="status" aria-live="polite">
+      <div class="timer" id="timer">Ready</div>
+      <div class="progress" aria-label="Progress">
+        <div id="progressBar"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <!-- Intro / Name capture -->
+    <section id="intro" class="card">
+      <h2>Ready to play?</h2>
+      <p>10 questions · 10 minutes · Topics from <strong>Kelantan</strong>, <strong>Kedah</strong>,
+        <strong>Penang</strong>, and <strong>Perak</strong>. Submit each answer to see if you're right.
+      </p>
+      <form id="startForm" class="start-form">
+        <label for="playerName">Your Name: </label>
+        <input type="text" id="playerName" name="playerName" placeholder="e.g., Aisyah" maxlength="30">
+        <button class="btn primary" type="submit">Start Game</button>
+        <details class="rules">
+          <summary>Game rules</summary>
+          <ul>
+            <li>Timer starts only after you confirm the prompt.</li>
+            <li>You have <strong>10 minutes</strong> to complete all 10 questions.</li>
+            <li>Submit each answer to get instant feedback & explanation.</li>
+            <li>Your final score and remaining time determine your leaderboard rank.</li>
+          </ul>
+        </details>
+      </form>
+    </section>
+
+    <!-- Quiz area -->
+    <section id="quiz" class="card hidden" aria-live="polite">
+      <div class="q-head">
+        <div class="pill" id="statePill">State</div>
+        <div class="q-count"><span id="qIndex">1</span>/10</div>
+      </div>
+
+      <h2 id="questionText">Question text here</h2>
+      <form id="answerForm" class="answers">
+        <div id="options"></div>
+        <div class="actions">
+          <button class="btn ghost" id="submitBtn" type="submit">Submit Answer</button>
+          <button class="btn ghost" id="nextBtn" type="button" disabled>Next</button>
+        </div>
+      </form>
+
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+    </section>
+
+    <!-- Results + Leaderboard -->
+    <section id="results" class="card hidden">
+      <h2>Great job, <span id="finalName"></span>!</h2>
+      <p>You scored <strong><span id="finalScore"></span>/10</strong> with <strong><span id="finalTime"></span></strong>
+        remaining.</p>
+
+      <div class="podium-wrap">
+        <h3>Top 3</h3>
+        <div id="podium" class="podium" aria-live="polite"></div>
+      </div>
+
+      <div class="leaderboard-wrap">
+        <h3>Leaderboard</h3>
+        <ol id="leaderboard"></ol>
+        <div class="lb-actions">
+          <button class="btn ghost" id="playAgain">Play Again</button>
+          <button class="btn ghost" id="backHome">Back to Home</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Ready Modal -->
+  <div id="readyOverlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="readyTitle">
+    <div class="dialog">
+      <h3 id="readyTitle">Start 10-minute quiz?</h3>
+      <div class="dialog-actions">
+        <button class="btn primary" id="readyYes">Yes, start</button>
+        <button class="btn ghost" id="readyCancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
+    <p>© 2025 Makan Island. All rights reserved.</p>
+    <p><a href="privacy-policy.html">Privacy Policy</a> • <a href="terms-of-use.html">Terms of Use</a></p>
+  </footer>
+
+  <script src="javascript/cookie.js"></script>
+  <script src="javascript/quiz.js" defer></script>
+</body>
+
+</html>
