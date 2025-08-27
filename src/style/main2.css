@@ -338,6 +338,7 @@ nav {
   justify-content: center;
   gap: 120px;
   margin-bottom: 30px;
+  overflow: hidden;
 }
 
 .comment > p {
