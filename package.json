@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "gsap": "^3.13.0"
+  }
+}

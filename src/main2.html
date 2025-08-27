@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style/main2.css">
+</head>
+
+<body>
+
+  <h1 class="counter">0</h1>
+
+  <div class="overlay">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <nav>
+    <div class="logo">
+      <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
+    </div>
+
+    <!-- NEW: mobile toggle button -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <!-- WRAP existing links -->
+    <div class="links nav-panel">
+      <a href="main2.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="login.html">Login</a>
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="perak.html">Perak</a>
+          <a role="menuitem" href="penang.html">Penang</a>
+          <a role="menuitem" href="kedah.html">Kedah</a>
+          <a role="menuitem" href="kelantan.html">Kelantan</a>
+        </div>
+      </div>
+
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="favourite.html">Favourite</a>
+          <a role="menuitem" href="ranking.html">Best Food in 2025</a>
+          <a role="menuitem" href="quiz.html">Quiz</a>
+          <a role="menuitem" href="restaurants.html">Restaurants</a>
+          <a role="menuitem" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="video">
+    <video id="video" autoplay muted loop>
+      <source src="elements/video/element.mp4">
+    </video>
+  </section>
+
+  <hr>
+
+  <section class="hero">
+    <div class="top-food">
+      <p>Top 3 Food in Malaysia</p>
+      <div class="food1">
+        <img id="food1" src="elements/image/Group 21.png">
+        <div class="food1-content">
+          <p>Teh Tarik</p>
+          <p>
+            Teh Tarik is Malaysia’s Signature “Pulled Tea” literally meaning “pulled tea”, is Malaysia’s national drink.
+          </p>
+        </div>
+      </div>
+      <div class="food2and3">
+        <div class="food2">
+          <img id="food2" src="elements/image/image 29.png">
+          <div class="food2-content">
+            <p>Nasi Lemak</p>
+            <p>Fragrant rice, spicy sambal, and a harmony of flavors.</p>
+          </div>
+        </div>
+        <div class="food3">
+          <img id="food3" src="elements/image/image 29.png">
+          <div class="food3-content">
+            <p>Nasi Lemak</p>
+            <p>Fragrant rice, spicy sambal, and a harmony of flavors.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr id="s">
+
+    <div class="top-place">
+      <p>
+        Top 6 Places in Malaysia
+      </p>
+      <div class="pic-container">
+        <img class="left-image" id="image1" src="elements/image/Picture3.jpg">
+        <img class="right-image" id="image2" src="elements/image/Picture4.jpg">
+      </div>
+      <div class="pic-container">
+        <img class="left-image" id="image3" src="elements/image/Picture5.jpg">
+        <img class="right-image" id="image4" src="elements/image/Picture6.jpg">
+      </div>
+      <div class="pic-container">
+        <img class="left-image" id="image5" src="elements/image/Picture7.jpg">
+        <img class="right-image" id="image6" src="elements/image/Picture8.jpg">
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="comment">
+      <p>Comment</p>
+      <div class="scroller" data-direction="left" data-speed="slow">
+        <div class="scroller__inner">
+          <div class="card" id="card1">
+            <img class="image-comment" src="elements/image/Group 26.png">
+          </div>
+          <div class="card" id="card2">
+            <img class="image-comment" src="elements/image/Group 26.png">
+          </div>
+          <div class="card" id="card3">
+            <img class="image-comment" src="elements/image/Group 26.png">
+          </div>
+          <div class="card" id="card4">
+            <img class="image-comment" src="elements/image/Group 26.png">
+          </div>
+          <div class="card" id="card5">
+            <img class="image-comment" src="elements/image/Group 26.png">
+          </div>
+          <div class="card" id="card6">
+            <img class="image-comment" src="elements/image/Group 26.png">
+          </div>
+          <div class="card" id="card7">
+            <img class="image-comment" src="elements/image/Group 26.png">
+          </div>
+          <div class="card" id="card8">
+            <img class="image-comment" src="elements/image/Group 26.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+  </section>
+
+  <footer>
+    <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
+    <p>© 2025 Makan Island. All rights reserved.</p>
+    <p><a href="privacy-policy.html">Privacy Policy</a> • <a href="terms-of-use.html">Terms of Use</a></p>
+  </footer>
+
+
+
+  <script src="gsap-public/gsap-public/minified/gsap.min.js"></script>
+  <script src="gsap-public/gsap-public/minified/ScrollTrigger.min.js"></script>
+  <script src="gsap-public/gsap-public/minified/SplitText.min.js"></script>
+  <script src="javascript/app.js"></script>
+</body>
+
+</html>

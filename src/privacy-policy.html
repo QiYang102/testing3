@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - MakanIsland</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f9f5f0;
+    }
+
+    h1,
+    h2 {
+      color: #d85a3f;
+    }
+
+    h1 {
+      text-align: center;
+      border-bottom: 2px solid #d85a3f;
+      padding-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 25px;
+    }
+
+    p,
+    ul {
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    a {
+      color: #d85a3f;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /*navigation*/
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      /* cover full width */
+      z-index: 1000;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      background-color: rgba(255, 255, 255, 0.7);
+      /* semi-transparent */
+      backdrop-filter: blur(10px);
+      /* blur the content behind */
+      -webkit-backdrop-filter: blur(10px);
+      /* Safari support */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      /* optional shadow */
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    #logoE {
+      max-height: 50px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      /* center the row of links/menus */
+      gap: clamp(12px, 3vw, 32px);
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .links a,
+    .menu-toggle {
+      font-size: 16pt;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .menu {
+      position: relative;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: 0;
+      cursor: pointer;
+      padding: 6px 4px;
+      line-height: 1;
+    }
+
+    .menu-list {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      display: none;
+      min-width: 200px;
+      padding: 8px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      z-index: 2000;
+    }
+
+    .menu-list a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .menu-list a:hover {
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    .menu.open .menu-list {
+      display: block;
+    }
+
+    /* Phone */
+    @media (max-width: 768px) {
+      .hero {
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      /* Make nav a single row: logo left, button right */
+      nav {
+        display: flex;
+        justify-content: center;
+        /* center logo horizontally */
+        align-items: center;
+        position: fixed;
+        /* so the button can anchor inside */
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .logo {
+        margin: 0 auto;
+      }
+
+      /* position button at right edge */
+      .nav-toggle {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        font-size: 24px;
+        /* ☰ size */
+        cursor: pointer;
+      }
+
+      /* Turn the links into a dropdown panel */
+      .nav-panel {
+        position: absolute;
+        top: 100%;
+        /* just below the fixed nav */
+        left: 0;
+        right: 0;
+        display: none;
+        /* hidden by default */
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 16px 16px;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      /* When nav is open */
+      nav.nav--open .nav-panel {
+        display: flex;
+      }
+
+      /* Tidy link sizing on mobile */
+      .links a,
+      .menu-toggle {
+        font-size: 15px;
+      }
+
+      /* Dropdowns inside the panel: make them flow */
+      .menu {
+        position: static;
+      }
+
+      .menu-list {
+        position: static;
+        display: none;
+        background: transparent;
+        box-shadow: none;
+        padding: 0 0 0 8px;
+        margin-top: 6px;
+      }
+
+      .menu.open .menu-list {
+        display: block;
+      }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      backdrop-filter: blur(10px);
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #FF6B35;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .contact-form-container {
+        padding: 40px 20px;
+        margin: 0 16px;
+      }
+
+      .form-section {
+        padding: 40px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">
+      <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
+    </div>
+
+    <!-- NEW: mobile toggle button -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <!-- WRAP existing links -->
+    <div class="links nav-panel">
+      <a href="main2.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="login.html">Login</a>
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="perak.html">Perak</a>
+          <a role="menuitem" href="penang.html">Penang</a>
+          <a role="menuitem" href="kedah.html">Kedah</a>
+          <a role="menuitem" href="kelantan.html">Kelantan</a>
+        </div>
+      </div>
+
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="favourite.html">Favourite</a>
+          <a role="menuitem" href="ranking.html">Best Food in 2025</a>
+          <a role="menuitem" href="quiz.html">Quiz</a>
+          <a role="menuitem" href="restaurants.html">Restaurants</a>
+          <a role="menuitem" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <br>
+  <br>
+  <br>
+
+  <h1>Privacy Policy</h1>
+  <p><strong>Last Updated:</strong> April 5, 2025</p>
+
+  <p>Welcome to <strong>MakanIsland</strong>, your ultimate guide to the vibrant food streets and local culinary
+    delights. We respect your privacy and are committed to protecting your personal information. This Privacy Policy
+    explains how we collect, use, disclose, and safeguard your data when you visit our website <a
+      href="https://www.makanisland.com">www.makanisland.com</a>.</p>
+
+  <h2>1. Information We Collect</h2>
+  <p>We may collect the following types of information:</p>
+  <ul>
+    <li><strong>Personal Information:</strong> When you subscribe to our newsletter, contact us, or participate in
+      surveys, we may collect your name, email address, and phone number.</li>
+    <li><strong>Usage Data:</strong> We automatically collect information about your interactions with our site, such as
+      your IP address, browser type, pages visited, and time spent on the site.</li>
+    <li><strong>Cookies:</strong> We use cookies and similar tracking technologies to enhance your experience and
+      analyze site traffic.</li>
+  </ul>
+
+  <h2>2. How We Use Your Information</h2>
+  <p>We use the information we collect to:</p>
+  <ul>
+    <li>Provide and improve our website and services.</li>
+    <li>Send newsletters, updates, or promotional content (with your consent).</li>
+    <li>Respond to your inquiries and support requests.</li>
+    <li>Analyze user trends to enhance food street recommendations.</li>
+    <li>Ensure the security and integrity of our platform.</li>
+  </ul>
+
+  <h2>3. Sharing of Information</h2>
+  <p>We do not sell or rent your personal information to third parties. We may share your data only in the following
+    circumstances:</p>
+  <ul>
+    <li><strong>With Service Providers:</strong> Trusted partners who assist us in operating our website, conducting
+      business, or servicing you (e.g., email marketing tools), under strict confidentiality agreements.</li>
+    <li><strong>Legal Requirements:</strong> If required by law, we may disclose your information in response to valid
+      requests from public authorities or to protect our rights and safety.</li>
+  </ul>
+
+  <h2>4. Data Security</h2>
+  <p>We implement reasonable administrative, technical, and physical security measures to protect your personal
+    information. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute
+    security.</p>
+
+  <h2>5. Your Rights</h2>
+  <p>You have the right to:</p>
+  <ul>
+    <li>Access, correct, or delete your personal data.</li>
+    <li>Opt out of marketing communications at any time.</li>
+    <li>Disable cookies through your browser settings.</li>
+  </ul>
+  <p>To exercise these rights, please contact us at <a
+      href="mailto:privacy@makanisland.com">privacy@makanisland.com</a>.</p>
+
+  <h2>6. Third-Party Links</h2>
+  <p>Our site may contain links to third-party websites (e.g., vendor pages, social media). We are not responsible for
+    the privacy practices of these sites. We encourage you to review their privacy policies before providing any
+    information.</p>
+
+  <h2>7. Children's Privacy</h2>
+  <p>Our website is not intended for children under 13. We do not knowingly collect personal information from children.
+    If we become aware of such collection, we will take steps to remove the data promptly.</p>
+
+  <h2>8. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with a revised "Last
+    Updated" date. We encourage you to review this policy periodically.</p>
+
+  <h2>9. Contact Us</h2>
+  <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+  <p>
+    <strong>Email:</strong> <a href="mailto:privacy@makanisland.com">privacy@makanisland.com</a><br>
+    <strong>Address:</strong> 123 Jalan Rasa, George Town, Penang
+  </p>
+
+  <footer>
+    <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
+    <br>
+    &copy; 2025 MakanIsland. All rights reserved.
+     <a href="main2.html">Home</a> |
+    <a href="terms-of-use.html">Terms of Use</a>
+  </footer>
+</body>
+
+<script>
+  // dropdown open/close
+  document.querySelectorAll('.menu-toggle').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const menu = btn.closest('.menu');
+      const isOpen = menu.classList.contains('open');
+
+      // close others
+      document.querySelectorAll('.menu.open').forEach(m => {
+        m.classList.remove('open');
+        const t = m.querySelector('.menu-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+
+      // toggle this one
+      if (!isOpen) {
+        menu.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // click outside to close
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.menu')) {
+      document.querySelectorAll('.menu.open').forEach(m => {
+        m.classList.remove('open');
+        const t = m.querySelector('.menu-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  // Esc to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.menu.open').forEach(m => {
+        m.classList.remove('open');
+        const t = m.querySelector('.menu-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  // Mobile hamburger toggle
+  const nav = document.querySelector('nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  const navPanel = document.querySelector('.nav-panel');
+
+  if (navToggle) {
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = nav.classList.toggle('nav--open');
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+
+    // close panel on outside click / Esc
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('nav')) {
+        nav.classList.remove('nav--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        nav.classList.remove('nav--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+</script>
+
+</html>

@@ -1,0 +1,329 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #fff;
+  --muted: #6b7280;
+  --ring: #eee;
+  --card-h: 560px;
+  /* overall card height (adjust if you want) */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--bg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* cover full width */
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(255, 255, 255, 0.7);
+  /* semi-transparent */
+  backdrop-filter: blur(10px);
+  /* blur the content behind */
+  -webkit-backdrop-filter: blur(10px);
+  /* Safari support */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* optional shadow */
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#logoE {
+  max-height: 50px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* center the row of links/menus */
+  gap: clamp(12px, 3vw, 32px);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.links a,
+.menu-toggle {
+  font-size: 16pt;
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-toggle {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 6px 4px;
+  line-height: 1;
+}
+
+.menu-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  display: none;
+  min-width: 200px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  z-index: 2000;
+}
+
+.menu-list a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.menu-list a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.menu.open .menu-list {
+  display: block;
+}
+
+
+
+.state {
+  padding: 8vh 6vw;
+  margin-top: 100px;
+}
+
+/* Pinned container */
+.track-outer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid var(--ring);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, .08);
+}
+
+/* Sticky header inside pinned box */
+.state-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .95), rgba(255, 255, 255, .88));
+  backdrop-filter: blur(4px);
+  padding: clamp(16px, 2vw, 24px) clamp(16px, 2vw, 28px);
+  border-bottom: 1px solid var(--ring);
+}
+
+.state-title {
+  margin: 0 0 4px;
+  font-size: clamp(22px, 3vw, 36px);
+}
+
+.state-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(13px, 1.4vw, 16px);
+}
+
+.track {
+  display: flex;
+  gap: 8px;
+  /* tighter spacing */
+  padding: 10px 14px;
+  /* compact padding */
+  box-sizing: border-box;
+  width: max-content;
+  /* content defines width for horizontal scroll */
+}
+
+/* --- 700px card with 70% photo / 30% text --- */
+.slide {
+  width: 700px;
+  max-width: 90vw;
+  height: var(--card-h);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  /* keeps card tidy */
+  background: #fff;
+  border: 1px solid var(--ring);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+}
+
+/* photo = 70% of card height */
+.slide .photo {
+  flex: 0 0 70%;
+  width: 100%;
+  height: auto;
+  /* height comes from flex-basis */
+}
+
+.slide .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ensure texts are visible even if previously hidden */
+.slide .name,
+.slide .meta,
+.slide .desc {
+  display: block !important;
+}
+
+/* text = remaining 30% */
+.slide .name {
+  margin: 10px 14px 4px;
+  font-size: 18px;
+}
+
+.slide .meta {
+  margin: 0 14px 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.slide .desc {
+  margin: 0 14px 12px;
+  flex: 1 1 auto;
+  /* fills the rest of the 30% text area */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* limit lines; remove if you want full text */
+  -webkit-box-orient: vertical;
+}
+
+.hint {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, .92);
+  border: 1px solid var(--ring);
+  border-radius: 999px;
+  padding: 4px 8px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Phone */
+@media (max-width: 768px) {
+  :root {
+    --card-h: 480px;
+  }
+
+  /* Make nav a single row: logo left, button right */
+  nav {
+    display: flex;
+    justify-content: center;
+    /* center logo horizontally */
+    align-items: center;
+    position: fixed;
+    /* so the button can anchor inside */
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  /* position button at right edge */
+  .nav-toggle {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    /* ☰ size */
+    cursor: pointer;
+  }
+
+  /* Turn the links into a dropdown panel */
+  .nav-panel {
+    position: absolute;
+    top: 100%;
+    /* just below the fixed nav */
+    left: 0;
+    right: 0;
+    display: none;
+    /* hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 16px 16px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  /* When nav is open */
+  nav.nav--open .nav-panel {
+    display: flex;
+  }
+
+  /* Tidy link sizing on mobile */
+  .links a,
+  .menu-toggle {
+    font-size: 15px;
+  }
+
+  /* Dropdowns inside the panel: make them flow */
+  .menu {
+    position: static;
+  }
+
+  .menu-list {
+    position: static;
+    display: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0 0 0 8px;
+    margin-top: 6px;
+  }
+
+  .menu.open .menu-list {
+    display: block;
+  }
+}

@@ -1,0 +1,405 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*new*/
+
+
+/* favourite.css */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  margin: 0;
+  line-height: 1.6;
+  padding-top: 80px; /* Offset for fixed nav */
+}
+
+/* === Favourites Page Content === */
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('food-bg.png') no-repeat center center/cover;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* === Favourites Grid (cards only) === */
+#favourites-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 per row on desktop */
+  gap: 20px;
+  justify-items: center; /* Center cards in their grid cell */
+  margin-bottom: 40px;
+}
+
+/* When empty, center the message inside the grid */
+#favourites-container:has(.no-favourites) {
+  display: flex;              /* Switch to flexbox when empty */
+  justify-content: center;    /* Horizontal center */
+  align-items: center;        /* Vertical center */
+  min-height: 200px;          /* Give it height to center properly */
+}
+
+.food-item {
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 220px; /* scale nicely inside the grid */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ensures button is always at bottom */
+}
+
+.food-item:hover {
+  transform: translateY(-5px);
+}
+
+.food-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.food-name {
+  font-weight: 600;
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.btn-remove {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px auto 15px;
+  font-size: 0.9rem;
+  width: 100px;
+}
+
+.btn-remove:hover {
+  background-color: #c0392b;
+}
+
+/* === Remove All Button (always centered under grid) === */
+.btn-remove-all {
+  display: block;
+  margin: 30px auto 0;
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 220px;
+  text-align: center;
+}
+
+.btn-remove-all:hover {
+  background-color: #a02c1b;
+}
+
+
+/* === No Favourites Message === */
+.no-favourites {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  font-style: italic;
+  margin: 40px 0;
+}
+
+/* === Social Share Section === */
+.social-share {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.social-share a {
+  color: #2980b9;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social-share a:hover {
+  text-decoration: underline;
+}
+
+/* === Responsive Layout === */
+@media (max-width: 992px) {
+  #favourites-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  #favourites-container {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+  }
+}
+
+
+/*new until kere*/
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  color: #666;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #FF6B35;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .contact-form-container {
+    padding: 40px 20px;
+    margin: 0 16px;
+  }
+
+  .form-section {
+    padding: 40px 0;
+  }
+}
+
+
+
+
+/*navigation*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* cover full width */
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(255, 255, 255, 0.7);
+  /* semi-transparent */
+  backdrop-filter: blur(10px);
+  /* blur the content behind */
+  -webkit-backdrop-filter: blur(10px);
+  /* Safari support */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* optional shadow */
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#logoE {
+  max-height: 50px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* center the row of links/menus */
+  gap: clamp(12px, 3vw, 32px);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.links a,
+.menu-toggle {
+  font-size: 16pt;
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-toggle {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 6px 4px;
+  line-height: 1;
+}
+
+.menu-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  display: none;
+  min-width: 200px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  z-index: 2000;
+}
+
+.menu-list a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.menu-list a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.menu.open .menu-list {
+  display: block;
+}
+
+/* Phone */
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  /* Make nav a single row: logo left, button right */
+  nav {
+    display: flex;
+    justify-content: center;
+    /* center logo horizontally */
+    align-items: center;
+    position: fixed;
+    /* so the button can anchor inside */
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  /* position button at right edge */
+  .nav-toggle {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    /* ☰ size */
+    cursor: pointer;
+  }
+
+  /* Turn the links into a dropdown panel */
+  .nav-panel {
+    position: absolute;
+    top: 100%;
+    /* just below the fixed nav */
+    left: 0;
+    right: 0;
+    display: none;
+    /* hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 16px 16px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  /* When nav is open */
+  nav.nav--open .nav-panel {
+    display: flex;
+  }
+
+  /* Tidy link sizing on mobile */
+  .links a,
+  .menu-toggle {
+    font-size: 15px;
+  }
+
+  /* Dropdowns inside the panel: make them flow */
+  .menu {
+    position: static;
+  }
+
+  .menu-list {
+    position: static;
+    display: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0 0 0 8px;
+    margin-top: 6px;
+  }
+
+  .menu.open .menu-list {
+    display: block;
+  }
+}

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      /* cover full width */
+      z-index: 1000;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      background-color: rgba(255, 255, 255, 0.7);
+      /* semi-transparent */
+      backdrop-filter: blur(10px);
+      /* blur the content behind */
+      -webkit-backdrop-filter: blur(10px);
+      /* Safari support */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      /* optional shadow */
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    #logoE {
+      max-height: 50px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      /* center the row of links/menus */
+      gap: clamp(12px, 3vw, 32px);
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .links a,
+    .menu-toggle {
+      font-size: 16pt;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .menu {
+      position: relative;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: 0;
+      cursor: pointer;
+      padding: 6px 4px;
+      line-height: 1;
+    }
+
+    .menu-list {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      display: none;
+      min-width: 200px;
+      padding: 8px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      z-index: 2000;
+    }
+
+    .menu-list a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .menu-list a:hover {
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    .menu.open .menu-list {
+      display: block;
+    }
+
+    /* Phone */
+    @media (max-width: 768px) {
+
+      /* Make nav a single row: logo left, button right */
+      nav {
+        display: flex;
+        justify-content: center;
+        /* center logo horizontally */
+        align-items: center;
+        position: relative;
+        /* so the button can anchor inside */
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .logo {
+        margin: 0 auto;
+      }
+
+      /* position button at right edge */
+      .nav-toggle {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        font-size: 24px;
+        /* ☰ size */
+        cursor: pointer;
+      }
+
+      /* Turn the links into a dropdown panel */
+      .nav-panel {
+        position: absolute;
+        top: 100%;
+        /* just below the fixed nav */
+        left: 0;
+        right: 0;
+        display: none;
+        /* hidden by default */
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 16px 16px;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      /* When nav is open */
+      nav.nav--open .nav-panel {
+        display: flex;
+      }
+
+      /* Tidy link sizing on mobile */
+      .links a,
+      .menu-toggle {
+        font-size: 15px;
+      }
+
+      /* Dropdowns inside the panel: make them flow */
+      .menu {
+        position: static;
+      }
+
+      .menu-list {
+        position: static;
+        display: none;
+        background: transparent;
+        box-shadow: none;
+        padding: 0 0 0 8px;
+        margin-top: 6px;
+      }
+
+      .menu.open .menu-list {
+        display: block;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <img id="logoE" src="src/elements/image/image 27.png" alt="Makan Island">
+    </div>
+
+    <!-- NEW: mobile toggle button -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <!-- WRAP existing links -->
+    <div class="links nav-panel">
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Login</a>
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="#">Perak</a>
+          <a role="menuitem" href="#">Penang</a>
+          <a role="menuitem" href="#">Kedah</a>
+          <a role="menuitem" href="#">Kelantan</a>
+        </div>
+      </div>
+
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="#">Favourite</a>
+          <a role="menuitem" href="#">Best Food in 2025</a>
+          <a role="menuitem" href="#">Quiz</a>
+          <a role="menuitem" href="#">Travel</a>
+          <a role="menuitem" href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div id="testing" style="width: 100vw; height: 100vh; background-color: black; margin-top: 200px;"></div>
+
+  <script>
+    // dropdown open/close
+    document.querySelectorAll('.menu-toggle').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const menu = btn.closest('.menu');
+        const isOpen = menu.classList.contains('open');
+
+        // close others
+        document.querySelectorAll('.menu.open').forEach(m => {
+          m.classList.remove('open');
+          const t = m.querySelector('.menu-toggle');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+
+        // toggle this one
+        if (!isOpen) {
+          menu.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // click outside to close
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu')) {
+        document.querySelectorAll('.menu.open').forEach(m => {
+          m.classList.remove('open');
+          const t = m.querySelector('.menu-toggle');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
+    // Esc to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.menu.open').forEach(m => {
+          m.classList.remove('open');
+          const t = m.querySelector('.menu-toggle');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
+    // Mobile hamburger toggle
+    const nav = document.querySelector('nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navPanel = document.querySelector('.nav-panel');
+
+    if (navToggle) {
+      navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = nav.classList.toggle('nav--open');
+        navToggle.setAttribute('aria-expanded', String(open));
+      });
+
+      // close panel on outside click / Esc
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('nav')) {
+          nav.classList.remove('nav--open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          nav.classList.remove('nav--open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

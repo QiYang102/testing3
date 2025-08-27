@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+  font-family: "Mona Sans";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  
+  font-family: "Mona Sans";
+}
+
+/* Desktops */
+@media (max-width: 2560px) {
+  .main-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .logo {
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  #logoE {
+    width: 100%;
+    max-height: 150px;
+  }
+
+  .content {
+    background-color: white;
+    border-radius: 30px;
+    max-width: 380px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .content > :nth-child(1) {
+    font-size: 25pt;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+    line-height: 35px;
+  }
+
+  .explore {
+    position: relative;
+    color: white;
+    background-color: black;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;              /* space between arrow and text */
+    min-width: 200px;
+    max-height: 60px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;       /* clip ::before */
+    z-index: 1;
+  }
+
+  /* green overlay for hover */
+  .explore::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #10b981;   /* emerald green */
+    z-index: -1;                 /* keep behind text & img */
+    transition: width 0.5s ease;
+  }
+
+  /* animate left→right fill */
+  .explore:hover::before {
+    width: 100%;
+  }
+
+  #exploreE {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+
+  /* small arrow movement on hover */
+  .explore:hover #exploreE {
+    transform: rotate(-10deg);
+  }
+
+
+  .explore > p {
+    font-size: 15pt;
+    margin-left: 15px;
+  }
+
+  #exploreE {
+    min-width: 40px;
+    height: 100%;
+  }
+
+  .background {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    overflow: hidden;   /* hide anything going outside */
+  }
+
+  .row {
+    width: 100vw;
+    height: calc(100vw/5);
+    display: flex;
+    flex-direction: row;
+  }
+
+  .row:nth-child(1){
+    transform: rotate(20deg) translateX(calc(100vw/8)) translateY(calc(100vw/6 * -1));
+  }
+
+
+  .row:nth-child(2),
+  .row:nth-child(3),
+  .row:nth-child(4),
+  .row:nth-child(5),
+  .row:nth-child(6),
+  .row:nth-child(7),
+  .row:nth-child(8) {
+    transform: rotate(20deg) translateX(-50vw) translateY(calc(-100vw / 6));
+  }
+
+  .col {
+    width: calc(100vw/4);
+    height: calc(100vw/6);
+    margin-right: 10px;
+    background-color: #D9D9D9;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    padding: 0;
+    display: flex;               
+    align-items: center;         
+    justify-content: center;     
+  }
+
+  .col img{
+    width: 50%;
+    display:block;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+.main-content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo {
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  #logoE {
+    width: 100%;
+    max-height: 150px;
+  }
+
+  .content {
+    max-width: 200px;
+  }
+
+  .content > :nth-child(1) {
+    font-size: 16pt;
+    line-height: 25px;
+  }
+
+  .content > :nth-child(2) {
+    font-size: 10pt;
+    text-align: justify;
+  }
+
+  .explore {
+    min-width: 100px;
+    max-height: 50px;
+  }
+
+  .explore > p {
+    font-size: 14pt;
+    margin-left: 15px;
+  }
+
+  #exploreE {
+    min-width: 30px;
+    height: 100%;
+  }
+
+  .col {
+    width: calc(100vw/3);
+    height: calc(100vw/4);
+  }
+}

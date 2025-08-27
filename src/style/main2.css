@@ -1,0 +1,626 @@
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+  font-family: "Mona Sans";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Mona Sans";
+  height: 100vh;
+}
+
+hr {
+  position: relative;   
+  z-index: 2;          
+  border: none;
+  height: 1px;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  background: #000000;     
+  margin: 40px auto;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;                 /* cover full width */
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(255, 255, 255, 0.7); /* semi-transparent */
+  backdrop-filter: blur(10px);                /* blur the content behind */
+  -webkit-backdrop-filter: blur(10px);        /* Safari support */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);      /* optional shadow */
+}
+
+.nav-toggle { display: none; }
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#logoE {
+  max-height: 50px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;      /* center the row of links/menus */
+  gap: clamp(12px, 3vw, 32px);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.links a,
+.menu-toggle {
+  font-size: 16pt;
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu { position: relative; }
+
+.menu-toggle {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 6px 4px;
+  line-height: 1;
+}
+
+.menu-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  display: none;
+  min-width: 200px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  z-index: 2000;
+}
+
+.menu-list a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.menu-list a:hover { background: rgba(0,0,0,0.06); }
+
+.menu.open .menu-list { display: block; }
+
+.video {
+  margin-top: 180px;
+  width: 90%;
+  height: 70%; /* full viewport height, adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 30px;
+  border: 1px black solid;
+  margin-bottom: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.video > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* crop & fill like background-size: cover */
+  display: block;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
+
+.hero .top-food {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .top-food > p{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  font-size: 30pt;
+  font-weight: bold;
+}
+
+.hero .food1 {
+  min-width: 900px;
+  max-width: 1000px;
+  min-height: 500px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  gap: 110px;
+  align-items: center;
+  border-radius: 20px;
+  margin-bottom: 50px;
+
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.15),
+    0 25px 40px rgba(0, 0, 0, 0.2);
+  
+}
+
+.hero .food1-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 400px;
+  text-align: justify;
+}
+
+.hero .food1-content p:nth-child(1) {
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero .food1-content p:nth-child(2) {
+  font-size: 13pt;
+}
+
+#food1 {
+  width: 200px;
+  max-height: 100%;
+}
+
+.hero .food2and3 {
+  min-width: 900px;
+  max-width: 1000px;
+  min-height: 500px;
+  max-height: 600px;
+
+  position: relative;
+  gap: 110px;
+
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.hero .food2and3 .food2 {
+  position: absolute;
+  width: 48%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  border-radius: 20px;
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.15),
+    0 25px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hero .food2and3 .food3 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48%;
+  height: 100%;
+
+  border-radius: 20px;
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.15),
+    0 25px 40px rgba(0, 0, 0, 0.2);
+}
+
+#food2 {
+  position: absolute;
+  top: 50px;
+  left: 125px;
+
+  width: 200px;
+}
+
+#food3 {
+  position: absolute;
+  top: 50px;
+  right: 125px;
+
+  width: 200px;
+}
+
+.hero .food2and3 .food2 .food2-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+
+  position: absolute;
+  top: 300px;
+  left: 100px;
+}
+
+.hero .food2and3 .food2 .food2-content p:nth-child(1) {
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-bottom: 1px;
+  text-align: center;
+}
+
+.hero .food2and3 .food2 .food2-content p:nth-child(2) {
+  font-size: 13pt;
+  text-align: center;
+}
+
+.hero .food2and3 .food3 .food3-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+
+  position: absolute;
+  top: 300px;
+  left: 100px;
+}
+
+.hero .food2and3 .food3 .food3-content p:nth-child(1) {
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 1px;
+}
+
+.hero .food2and3 .food3 .food3-content p:nth-child(2) {
+  font-size: 13pt;
+  text-align: justify;
+  text-align: center;
+}
+
+.top-place {
+  position: relative;
+  width: min(100%, 1000px);   /* responsive width, max 1000px */
+  margin: 0 auto 60px;        /* center horizontally */
+  min-height: 100vh;          /* if you want it tall */
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* center children horizontally */
+  gap: 24px;
+}
+
+.top-place > p {
+  position: absolute;
+  display: flex;
+  max-width: 500px;           
+  font-size: 50pt;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  top: 350px;
+}
+
+.left-image, .right-image {
+  border-radius: 50px;
+  width: 500px;
+  height: 300px;
+  box-shadow:
+  0 10px 15px rgba(0, 0, 0, 0.15),
+  0 25px 40px rgba(0, 0, 0, 0.2);
+}
+
+.pic-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 120px;
+  margin-bottom: 30px;
+}
+
+.comment > p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  font-size: 50pt;
+  font-weight: bold;
+}
+
+.scroller {
+  max-width: 90%;
+  height: 500px;
+  margin: 40px auto;
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+.scroller__inner {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+/* enable animation when JS sets data-animated="true" */
+.scroller[data-animated="true"] {
+  -webkit-mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+          mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 20s)
+             linear infinite
+             var(--_animation-direction, forwards);
+}
+
+.scroller[data-direction="left"]  { --_animation-direction: forwards; }
+.scroller[data-direction="right"] { --_animation-direction: reverse; }
+.scroller[data-speed="fast"]      { --_animation-duration: 20s; }
+.scroller[data-speed="slow"]      { --_animation-duration: 40s; }
+
+/* cards */
+.card {
+  width: 600px;
+  height: 400px;
+  border-radius: 50px;
+  margin-left: 200px;
+  margin-right: 50px;
+}
+
+.image-comment {
+  height: 300px;
+}
+
+/* odd cards go down */
+.card:nth-child(odd) {
+  transform: translateY(20px);
+}
+
+/* even cards go up */
+.card:nth-child(even) {
+  transform: translateY(-20px);
+}
+
+/* animation keyframes */
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    backdrop-filter: blur(10px);
+    color: #666;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #FF6B35;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* full-screen overlay that truly covers everything */
+.overlay{
+  position: fixed;
+  inset: 0;                 /* top:0; right:0; bottom:0; left:0 */
+  z-index: 2000;            /* above your site */
+  display: flex;            /* even column bars */
+}
+
+/* bars: use flex instead of 10vw to avoid tiny rounding gaps */
+.bar{
+  flex: 1 0 0;              /* 10 equal columns */
+  height: 102vh;            /* full viewport height */
+  background: #1a1a1a;      /* overlay color */
+}
+
+/* huge counter number on top of overlay */
+.counter{
+  position: fixed;
+  inset: 0;
+  z-index: 10000;           /* above .overlay */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: .2em .4em;
+  color: #bcbcc4;
+  font-size: 20vw;          /* super big, scales with viewport */
+  line-height: 1;
+  pointer-events: none;     /* clicks pass through */
+}
+
+
+
+/* Phone */
+@media (max-width: 768px) {
+  /* Make nav a single row: logo left, button right */
+  nav {
+    display: flex;
+    justify-content: center;   /* center logo horizontally */
+    align-items: center;
+    position: fixed;        /* so the button can anchor inside */
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  /* position button at right edge */
+  .nav-toggle {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    font-size: 24px;   /* ☰ size */
+    cursor: pointer;
+  }
+
+  /* Turn the links into a dropdown panel */
+  .nav-panel {
+    position: absolute;
+    top: 100%;           /* just below the fixed nav */
+    left: 0;
+    right: 0;
+    display: none;       /* hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 16px 16px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  /* When nav is open */
+  nav.nav--open .nav-panel { display: flex; }
+
+  /* Tidy link sizing on mobile */
+  .links a, .menu-toggle { font-size: 15px; }
+
+  /* Dropdowns inside the panel: make them flow */
+  .menu { position: static; }
+  .menu-list {
+    position: static;
+    display: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0 0 0 8px;
+    margin-top: 6px;
+  }
+  .menu.open .menu-list { display: block; }
+
+  .logo { width: 100%; }            /* avoid 100vw overflow on mobile */
+
+  .video {
+    margin-top: 100px;    /* a bit less spacer below fixed nav */
+    width: 94%;
+    height: 56vw;         /* keep a 16:9-ish ratio */
+    border-radius: 16px;
+  }
+
+  .hero .top-food > p { font-size: 22pt; }
+
+  /* --- Food 1: keep image + text, but reduce gap --- */
+  .hero .food1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    min-width: 80%;
+    margin: 0 auto 36px;
+    border-radius: 16px;
+  }
+
+  #food1 { width: 160px; margin-top: 10px; }
+  .hero .food1-content { max-width: 80%; }
+  .hero .food1-content p:nth-child(1) { font-size: 15pt; text-align: center; }
+  .hero .food1-content p:nth-child(2) { font-size: 10pt; text-align: center; }
+
+  /* --- Food 2 & 3: keep side-by-side feel on tablet, stack on phone --- */
+  .hero .food2and3 {
+    position: relative;
+    gap: 16px;
+    min-width: 80%;
+    margin: 0 auto 24px;
+  }
+  .hero .food2and3 .food2,
+  .hero .food2and3 .food3 {
+    position: relative;   /* turn off absolute layout when stacked */
+    padding: 16px;
+    min-width: 90%;
+    border-radius: 16px;
+    margin-bottom: 30px;
+  }
+
+  /* place images/content nicely inside each card */
+  #food2, #food3 {
+    position: static;
+    width: 160px;
+    display: block;
+    margin: 12px auto 8px;
+  }
+  .hero .food2and3 .food2 .food2-content,
+  .hero .food2and3 .food3 .food3-content {
+    position: static;
+    max-width: none;
+    align-items: center;
+    text-align: center;
+  }
+  .hero .food2and3 .food2 .food2-content p:nth-child(1),
+  .hero .food2and3 .food3 .food3-content p:nth-child(1) { font-size: 16pt; }
+  .hero .food2and3 .food2 .food2-content p:nth-child(2),
+  .hero .food2and3 .food3 .food3-content p:nth-child(2) { font-size: 12.5pt; }
+
+  #s {
+    margin-top: 200px;
+  }
+
+  /* Top places: reduce size, keep two-per-row feel by stacking rows */
+  .top-place{
+    min-height: 100%;
+  }
+
+  .left-image, .right-image { width: 160px; height: 100px; border-radius: 30px; }
+  .pic-container { gap: 24px; }
+  .top-place > p {
+    position: absolute;
+    font-size: 28pt;
+    top: 100px;
+    margin-bottom: 8px;
+    max-width: 200px;
+  }
+
+  /* Comments scroller */
+  .scroller { max-width: 94%; height: 380px; padding-top: 24px; }
+  .card { width: 360px; height: 260px; margin-left: 40px; }
+  .image-comment { height: 200px; }
+
+  .comment > p {
+    font-size: 28pt;
+  }
+}

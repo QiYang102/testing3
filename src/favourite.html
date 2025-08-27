@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favourites Food</title>
+  <link rel="stylesheet" href="style/favourite.css" />
+
+
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
+    </div>
+
+    <!-- NEW: mobile toggle button -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <!-- WRAP existing links -->
+    <div class="links nav-panel">
+      <a href="main2.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="login.html">Login</a>
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="perak.html">Perak</a>
+          <a role="menuitem" href="penang.html">Penang</a>
+          <a role="menuitem" href="kedah.html">Kedah</a>
+          <a role="menuitem" href="kelantan.html">Kelantan</a>
+        </div>
+      </div>
+
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="favourite.html">Favourite</a>
+          <a role="menuitem" href="ranking.html">Best Food in 2025</a>
+          <a role="menuitem" href="quiz.html">Quiz</a>
+          <a role="menuitem" href="restaurants.html">Restaurants</a>
+          <a role="menuitem" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!--Code-->
+  <!-- Hero Section -->
+  <section class="hero">
+
+    <h1>My Favourite Malaysian Food 🍛</h1>
+    <p>Delicious dishes I can't stop thinking about 😋</p>
+
+  </section>
+
+  <!-- Favourites List -->
+  <div class="container">
+    <h2 class="section-title">Your Favourites Food ❤️</h2>
+    <div id="favourites-container">
+      <!-- Will be filled by JavaScript -->
+    </div>
+
+    <div class="remove-all-wrapper">
+      <button class="btn-remove-all" onclick="removeAllFavourites()">Remove All</button>
+    </div>
+
+    <!-- Social Sharing -->
+    <div class="social-share">
+      <p>Share your taste with friends:</p>
+      <a href="#" onclick="shareOnFacebook(); return false;">Share on Facebook</a>
+      <a href="#" onclick="shareOnTwitter(); return false;">Share on Twitter</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
+    <p>© 2025 Makan Island. All rights reserved.</p>
+    <p><a href="privacy-policy.html">Privacy Policy</a> • <a href="terms-of-use.html">Terms of Use</a></p>
+  </footer>
+  <!--<div id="testing" style="width: 100vw; height: 100vh; background-color: black; margin-top: 200px;"></div>-->
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="javascript/favourite.js"></script>
+
+</body>
+
+</html>

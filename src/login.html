@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="style/login.css">
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
+    </div>
+
+    <!-- NEW: mobile toggle button -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <!-- WRAP existing links -->
+    <div class="links nav-panel">
+      <a href="main2.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="login.html">Login</a>
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="perak.html">Perak</a>
+          <a role="menuitem" href="penang.html">Penang</a>
+          <a role="menuitem" href="kedah.html">Kedah</a>
+          <a role="menuitem" href="kelantan.html">Kelantan</a>
+        </div>
+      </div>
+
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="favourite.html">Favourite</a>
+          <a role="menuitem" href="ranking.html">Best Food in 2025</a>
+          <a role="menuitem" href="quiz.html">Quiz</a>
+          <a role="menuitem" href="restaurants.html">Restaurants</a>
+          <a role="menuitem" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LOGIN CARD -->
+  <div class="container">
+    <div class="card">
+      <h2>Login</h2>
+      <p class="subtle">Welcome to Makan Island!</p>
+
+      <!-- Local username/password login -->
+      <form id="loginForm" autocomplete="on">
+        <label>
+          Username
+          <input id="loginUsername" type="text" required placeholder="e.g. alex_tan" />
+        </label>
+        <label>
+          Password
+          <input id="loginPassword" type="password" required minlength="6" placeholder="min 6 characters" />
+        </label>
+        <button class="btn primary" type="submit">Login</button>
+        <div id="loginError" class="error">Invalid username or password.</div>
+      </form>
+
+      <div class="center" style="margin-top:12px;">
+        <span class="subtle">Don’t have an account?</span>
+        <span id="openSignup" class="link">Create one</span>
+      </div>
+
+      <hr />
+
+      <!-- Google login goes at the BOTTOM -->
+      <div class="center" style="margin-bottom:6px; color:#666; font-size:14px;">Or continue with Google</div>
+      <div id="g_id_onload" data-client_id="535609468752-vrtouan080iq3pj6pqme12hrnt4nmng0.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse" data-auto_prompt="false"></div>
+      <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
+        data-shape="rectangular" data-logo_alignment="left"></div>
+
+      <!-- Profile preview (after login) -->
+      <div id="profile">
+        <img id="avatar" src="" alt="profile picture" />
+        <h3 id="welcome"></h3>
+        <p id="email"></p>
+        <button class="btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <img src="elements/image/image 10.png">
+  </div>
+
+  <!-- SIGN UP MODAL (separate form) -->
+  <div id="signupModal" class="modal" aria-hidden="true">
+    <div class="card" role="dialog" aria-modal="true">
+      <h2>Create an account</h2>
+      <p class="subtle">Username + password (password must be at least 6 characters).</p>
+      <form id="signupForm" autocomplete="on">
+        <label>
+          Username
+          <input id="suUsername" type="text" required placeholder="choose a username" />
+        </label>
+        <label>
+          Email (optional)
+          <input id="suEmail" type="email" placeholder="you@example.com" />
+        </label>
+        <label>
+          Password
+          <input id="suPassword" type="password" required minlength="6" placeholder="min 6 characters" />
+        </label>
+        <label>
+          Confirm Password
+          <input id="suPassword2" type="password" required minlength="6" placeholder="retype password" />
+        </label>
+        <div style="display:flex; gap:10px; margin-top:2px;">
+          <button class="btn" type="button" id="closeSignup">Cancel</button>
+          <button class="btn primary" type="submit">Create account</button>
+        </div>
+        <div id="signupError" class="error"></div>
+        <div id="signupOk" class="ok">Account created! You can log in now.</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Google Identity Services -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="javascript/login.js"></script>
+
+</body>
+
+</html>
