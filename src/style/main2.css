@@ -12,14 +12,14 @@ body {
 }
 
 hr {
-  position: relative;   
-  z-index: 2;          
+  position: relative;
+  z-index: 2;
   border: none;
   height: 1px;
   width: 90%;
   align-items: center;
   justify-content: center;
-  background: #000000;     
+  background: #000000;
   margin: 40px auto;
 }
 
@@ -27,7 +27,8 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;                 /* cover full width */
+  width: 100%;
+  /* cover full width */
   z-index: 1000;
 
   display: flex;
@@ -35,13 +36,19 @@ nav {
   align-items: center;
   justify-content: center;
 
-  background-color: rgba(255, 255, 255, 0.7); /* semi-transparent */
-  backdrop-filter: blur(10px);                /* blur the content behind */
-  -webkit-backdrop-filter: blur(10px);        /* Safari support */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);      /* optional shadow */
+  background-color: rgba(255, 255, 255, 0.7);
+  /* semi-transparent */
+  backdrop-filter: blur(10px);
+  /* blur the content behind */
+  -webkit-backdrop-filter: blur(10px);
+  /* Safari support */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* optional shadow */
 }
 
-.nav-toggle { display: none; }
+.nav-toggle {
+  display: none;
+}
 
 .logo {
   display: flex;
@@ -61,7 +68,8 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;      /* center the row of links/menus */
+  justify-content: center;
+  /* center the row of links/menus */
   gap: clamp(12px, 3vw, 32px);
   width: 100%;
   margin-bottom: 20px;
@@ -74,7 +82,9 @@ nav {
   text-decoration: none;
 }
 
-.menu { position: relative; }
+.menu {
+  position: relative;
+}
 
 .menu-toggle {
   background: none;
@@ -92,10 +102,10 @@ nav {
   min-width: 200px;
   padding: 8px;
   border-radius: 8px;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   z-index: 2000;
 }
 
@@ -106,14 +116,19 @@ nav {
   white-space: nowrap;
 }
 
-.menu-list a:hover { background: rgba(0,0,0,0.06); }
+.menu-list a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
 
-.menu.open .menu-list { display: block; }
+.menu.open .menu-list {
+  display: block;
+}
 
 .video {
   margin-top: 180px;
   width: 90%;
-  height: 70%; /* full viewport height, adjust as needed */
+  height: 70%;
+  /* full viewport height, adjust as needed */
   display: flex;
   align-items: center;
   justify-self: center;
@@ -125,10 +140,11 @@ nav {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-.video > video {
+.video>video {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* crop & fill like background-size: cover */
+  object-fit: cover;
+  /* crop & fill like background-size: cover */
   display: block;
 }
 
@@ -146,7 +162,7 @@ nav {
   justify-content: center;
 }
 
-.hero .top-food > p{
+.hero .top-food>p {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -172,7 +188,7 @@ nav {
   box-shadow:
     0 10px 15px rgba(0, 0, 0, 0.15),
     0 25px 40px rgba(0, 0, 0, 0.2);
-  
+
 }
 
 .hero .food1-content {
@@ -303,19 +319,23 @@ nav {
 
 .top-place {
   position: relative;
-  width: min(100%, 1000px);   /* responsive width, max 1000px */
-  margin: 0 auto 60px;        /* center horizontally */
-  min-height: 100vh;          /* if you want it tall */
+  width: min(100%, 1000px);
+  /* responsive width, max 1000px */
+  margin: 0 auto 60px;
+  /* center horizontally */
+  min-height: 100vh;
+  /* if you want it tall */
   display: flex;
   flex-direction: column;
-  align-items: center;         /* center children horizontally */
+  align-items: center;
+  /* center children horizontally */
   gap: 24px;
 }
 
-.top-place > p {
+.top-place>p {
   position: absolute;
   display: flex;
-  max-width: 500px;           
+  max-width: 500px;
   font-size: 50pt;
   font-weight: bold;
   margin: 0;
@@ -323,13 +343,14 @@ nav {
   top: 350px;
 }
 
-.left-image, .right-image {
+.left-image,
+.right-image {
   border-radius: 50px;
   width: 500px;
   height: 300px;
   box-shadow:
-  0 10px 15px rgba(0, 0, 0, 0.15),
-  0 25px 40px rgba(0, 0, 0, 0.2);
+    0 10px 15px rgba(0, 0, 0, 0.15),
+    0 25px 40px rgba(0, 0, 0, 0.2);
 }
 
 .pic-container {
@@ -340,7 +361,7 @@ nav {
   margin-bottom: 30px;
 }
 
-.comment > p {
+.comment>p {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -366,20 +387,30 @@ nav {
 /* enable animation when JS sets data-animated="true" */
 .scroller[data-animated="true"] {
   -webkit-mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-          mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
 }
+
 .scroller[data-animated="true"] .scroller__inner {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 20s)
-             linear infinite
-             var(--_animation-direction, forwards);
+  animation: scroll var(--_animation-duration, 20s) linear infinite var(--_animation-direction, forwards);
 }
 
-.scroller[data-direction="left"]  { --_animation-direction: forwards; }
-.scroller[data-direction="right"] { --_animation-direction: reverse; }
-.scroller[data-speed="fast"]      { --_animation-duration: 20s; }
-.scroller[data-speed="slow"]      { --_animation-duration: 40s; }
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 40s;
+}
 
 /* cards */
 .card {
@@ -413,21 +444,21 @@ nav {
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 40px 20px;
-    backdrop-filter: blur(10px);
-    color: #666;
-    font-size: 0.9rem;
+  text-align: center;
+  padding: 40px 20px;
+  backdrop-filter: blur(10px);
+  color: #666;
+  font-size: 0.9rem;
 }
 
 footer a {
-    color: #FF6B35;
-    text-decoration: none;
-    margin: 0 8px;
+  color: #FF6B35;
+  text-decoration: none;
+  margin: 0 8px;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 
@@ -437,45 +468,57 @@ body.no-scroll {
 }
 
 /* full-screen overlay that truly covers everything */
-.overlay{
+.overlay {
   position: fixed;
-  inset: 0;                 /* top:0; right:0; bottom:0; left:0 */
-  z-index: 2000;            /* above your site */
-  display: flex;            /* even column bars */
+  inset: 0;
+  /* top:0; right:0; bottom:0; left:0 */
+  z-index: 2000;
+  /* above your site */
+  display: flex;
+  /* even column bars */
 }
 
 /* bars: use flex instead of 10vw to avoid tiny rounding gaps */
-.bar{
-  flex: 1 0 0;              /* 10 equal columns */
-  height: 102vh;            /* full viewport height */
-  background: #1a1a1a;      /* overlay color */
+.bar {
+  flex: 1 0 0;
+  /* 10 equal columns */
+  height: 102vh;
+  /* full viewport height */
+  background: #1a1a1a;
+  /* overlay color */
 }
 
 /* huge counter number on top of overlay */
-.counter{
+.counter {
   position: fixed;
   inset: 0;
-  z-index: 10000;           /* above .overlay */
+  z-index: 10000;
+  /* above .overlay */
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   padding: .2em .4em;
   color: #bcbcc4;
-  font-size: 20vw;          /* super big, scales with viewport */
+  font-size: 20vw;
+  /* super big, scales with viewport */
   line-height: 1;
-  pointer-events: none;     /* clicks pass through */
+  pointer-events: none;
+  /* clicks pass through */
 }
 
 
 
 /* Phone */
 @media (max-width: 768px) {
+
   /* Make nav a single row: logo left, button right */
   nav {
     display: flex;
-    justify-content: center;   /* center logo horizontally */
+    justify-content: center;
+    /* center logo horizontally */
     align-items: center;
-    position: fixed;        /* so the button can anchor inside */
+    position: fixed;
+    /* so the button can anchor inside */
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -496,34 +539,45 @@ body.no-scroll {
     justify-content: center;
     background: transparent;
     border: none;
-    font-size: 24px;   /* ☰ size */
+    font-size: 24px;
+    /* ☰ size */
     cursor: pointer;
   }
 
   /* Turn the links into a dropdown panel */
   .nav-panel {
     position: absolute;
-    top: 100%;           /* just below the fixed nav */
+    top: 100%;
+    /* just below the fixed nav */
     left: 0;
     right: 0;
-    display: none;       /* hidden by default */
+    display: none;
+    /* hidden by default */
     flex-direction: column;
     gap: 10px;
     padding: 12px 16px 16px;
-    background: rgba(255,255,255,0.92);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
 
   /* When nav is open */
-  nav.nav--open .nav-panel { display: flex; }
+  nav.nav--open .nav-panel {
+    display: flex;
+  }
 
   /* Tidy link sizing on mobile */
-  .links a, .menu-toggle { font-size: 15px; }
+  .links a,
+  .menu-toggle {
+    font-size: 15px;
+  }
 
   /* Dropdowns inside the panel: make them flow */
-  .menu { position: static; }
+  .menu {
+    position: static;
+  }
+
   .menu-list {
     position: static;
     display: none;
@@ -532,18 +586,29 @@ body.no-scroll {
     padding: 0 0 0 8px;
     margin-top: 6px;
   }
-  .menu.open .menu-list { display: block; }
 
-  .logo { width: 100%; }            /* avoid 100vw overflow on mobile */
+  .menu.open .menu-list {
+    display: block;
+  }
+
+  .logo {
+    width: 100%;
+  }
+
+  /* avoid 100vw overflow on mobile */
 
   .video {
-    margin-top: 100px;    /* a bit less spacer below fixed nav */
+    margin-top: 100px;
+    /* a bit less spacer below fixed nav */
     width: 94%;
-    height: 56vw;         /* keep a 16:9-ish ratio */
+    height: 56vw;
+    /* keep a 16:9-ish ratio */
     border-radius: 16px;
   }
 
-  .hero .top-food > p { font-size: 22pt; }
+  .hero .top-food>p {
+    font-size: 22pt;
+  }
 
   /* --- Food 1: keep image + text, but reduce gap --- */
   .hero .food1 {
@@ -551,15 +616,29 @@ body.no-scroll {
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    min-width: 80%;
+    min-width: 93%;
     margin: 0 auto 36px;
     border-radius: 16px;
   }
 
-  #food1 { width: 160px; margin-top: 10px; }
-  .hero .food1-content { max-width: 80%; }
-  .hero .food1-content p:nth-child(1) { font-size: 15pt; text-align: center; }
-  .hero .food1-content p:nth-child(2) { font-size: 10pt; text-align: center; }
+  #food1 {
+    width: 160px;
+    margin-top: 10px;
+  }
+
+  .hero .food1-content {
+    max-width: 80%;
+  }
+
+  .hero .food1-content p:nth-child(1) {
+    font-size: 15pt;
+    text-align: center;
+  }
+
+  .hero .food1-content p:nth-child(2) {
+    font-size: 10pt;
+    text-align: center;
+  }
 
   /* --- Food 2 & 3: keep side-by-side feel on tablet, stack on phone --- */
   .hero .food2and3 {
@@ -568,9 +647,11 @@ body.no-scroll {
     min-width: 80%;
     margin: 0 auto 24px;
   }
+
   .hero .food2and3 .food2,
   .hero .food2and3 .food3 {
-    position: relative;   /* turn off absolute layout when stacked */
+    position: relative;
+    /* turn off absolute layout when stacked */
     padding: 16px;
     min-width: 90%;
     border-radius: 16px;
@@ -578,12 +659,14 @@ body.no-scroll {
   }
 
   /* place images/content nicely inside each card */
-  #food2, #food3 {
+  #food2,
+  #food3 {
     position: static;
     width: 160px;
     display: block;
     margin: 12px auto 8px;
   }
+
   .hero .food2and3 .food2 .food2-content,
   .hero .food2and3 .food3 .food3-content {
     position: static;
@@ -591,23 +674,39 @@ body.no-scroll {
     align-items: center;
     text-align: center;
   }
+
   .hero .food2and3 .food2 .food2-content p:nth-child(1),
-  .hero .food2and3 .food3 .food3-content p:nth-child(1) { font-size: 16pt; }
+  .hero .food2and3 .food3 .food3-content p:nth-child(1) {
+    font-size: 16pt;
+  }
+
   .hero .food2and3 .food2 .food2-content p:nth-child(2),
-  .hero .food2and3 .food3 .food3-content p:nth-child(2) { font-size: 12.5pt; }
+  .hero .food2and3 .food3 .food3-content p:nth-child(2) {
+    font-size: 12.5pt;
+  }
 
   #s {
     margin-top: 200px;
   }
 
   /* Top places: reduce size, keep two-per-row feel by stacking rows */
-  .top-place{
+  .top-place {
     min-height: 100%;
   }
 
-  .left-image, .right-image { width: 160px; height: 100px; border-radius: 30px; }
-  .pic-container { gap: 24px; }
-  .top-place > p {
+  .left-image,
+  .right-image {
+    width: 160px;
+    height: 100px;
+    border-radius: 30px;
+  }
+
+  .pic-container {
+    gap: 24px;
+    overflow: hidden;
+  }
+
+  .top-place>p {
     position: absolute;
     font-size: 28pt;
     top: 100px;
@@ -616,11 +715,23 @@ body.no-scroll {
   }
 
   /* Comments scroller */
-  .scroller { max-width: 94%; height: 380px; padding-top: 24px; }
-  .card { width: 360px; height: 260px; margin-left: 40px; }
-  .image-comment { height: 200px; }
+  .scroller {
+    max-width: 94%;
+    height: 380px;
+    padding-top: 24px;
+  }
 
-  .comment > p {
+  .card {
+    width: 360px;
+    height: 260px;
+    margin-left: 40px;
+  }
+
+  .image-comment {
+    height: 200px;
+  }
+
+  .comment>p {
     font-size: 28pt;
   }
 }
