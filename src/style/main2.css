@@ -338,7 +338,6 @@ nav {
   justify-content: center;
   gap: 120px;
   margin-bottom: 30px;
-  overflow: hidden;
 }
 
 .comment > p {
@@ -607,7 +606,7 @@ body.no-scroll {
   }
 
   .left-image, .right-image { width: 160px; height: 100px; border-radius: 30px; }
-  .pic-container { gap: 24px; }
+  .pic-container { gap: 24px;  overflow: hidden; }
   .top-place > p {
     position: absolute;
     font-size: 28pt;
