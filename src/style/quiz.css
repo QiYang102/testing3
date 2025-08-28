@@ -459,6 +459,7 @@ nav {
 .btn.ghost {
   background: #fff;
   border-color: #605f5f;
+  color: #000000;
 }
 
 .btn.ghost:hover {
