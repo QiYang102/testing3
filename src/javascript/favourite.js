@@ -2,7 +2,6 @@
 
 // === STORAGE KEYS ===
 const FAV_KEY = "favouriteFoods";
-const SESSION_KEY = "recentView";
 const COOKIE_NAME = "user_preferences";
 
 // Helpers
@@ -76,26 +75,7 @@ function renderFavourites() {
   if (removeAllBtn) removeAllBtn.style.display = "block";
 }
 
-// === REST API Call (random food) ===
-function fetchRandomFood() {
-  $.ajax({
-    url: "https://www.themealdb.com/api/json/v1/1/random.php",
-    method: "GET",
-    success: function (data) {
-      const meal = data.meals[0];
-      const food = {
-        id: String(meal.idMeal),
-        name: meal.strMeal,
-        image: meal.strMealThumb
-      };
-      sessionStorage.setItem(SESSION_KEY, JSON.stringify(food));
-      console.log("Fetched from API:", food);
-    },
-    error: function () {
-      console.error("Failed to fetch food from API");
-    }
-  });
-}
+
 
 // === Social Sharing ===
 function shareOnFacebook() {
@@ -129,7 +109,6 @@ function getCookie(name) {
 // === Initialize on Page Load ===
 document.addEventListener("DOMContentLoaded", () => {
   renderFavourites();
-  fetchRandomFood();
   setCookie(COOKIE_NAME, "visited_favourites", 7);
 
   // Event delegation for item Remove buttons (robust after re-renders)
@@ -150,7 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Debug
   console.log("LocalStorage:", localStorage.getItem(FAV_KEY));
-  console.log("SessionStorage:", sessionStorage.getItem(SESSION_KEY));
   console.log("Cookies:", getCookie(COOKIE_NAME));
 });
 
@@ -234,3 +212,6 @@ if (navToggle) {
     }
   });
 }
+
+
+

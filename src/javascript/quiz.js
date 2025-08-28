@@ -1,7 +1,10 @@
+// =====================
+// NAV + MENUS (unchanged)
+// =====================
 
 // dropdown open/close
 document.querySelectorAll('.menu-toggle').forEach((btn) => {
-  btn.addEventListener('click', (e) => {
+  btn.addEventListener('click', () => {
     const menu = btn.closest('.menu');
     const isOpen = menu.classList.contains('open');
 
@@ -47,8 +50,6 @@ document.addEventListener('keydown', (e) => {
 // Mobile hamburger toggle
 const nav = document.querySelector('nav');
 const navToggle = document.querySelector('.nav-toggle');
-const navPanel = document.querySelector('.nav-panel');
-
 if (navToggle) {
   navToggle.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -71,8 +72,9 @@ if (navToggle) {
   });
 }
 
-
-
+// =====================
+// QUIZ APP
+// =====================
 (function () {
   // --- Elements ---
   const $intro = document.getElementById('intro');
@@ -100,13 +102,14 @@ if (navToggle) {
   const $timer = document.getElementById('timer');
   const $progressBar = document.getElementById('progressBar');
 
-  // Confirmation modal
+  // Modal
   const $readyOverlay = document.getElementById('readyOverlay');
   const $readyYes = document.getElementById('readyYes');
   const $readyCancel = document.getElementById('readyCancel');
 
-  // Podium
+  // Optional podium / last result sections (render if present)
   const $podium = document.getElementById('podium');
+  const $lastResult = document.getElementById('lastResult');
 
   // --- Simple SFX (no external files) ---
   const SFX = (() => {
@@ -127,15 +130,15 @@ if (navToggle) {
     };
   })();
 
-  // --- State ---
+  // --- State & Keys ---
   const DURATION = 10 * 60 * 1000; // 10 minutes
   const LB_KEY = 'makan_quiz_leaderboard';
-  let startedAt = null, endAt = null, tickId = null;
+  const LAST_RESULT_KEY = 'makan_quiz_last_result';
 
+  let startedAt = null, endAt = null, tickId = null;
   let name = '';
   let idx = 0;
   let score = 0;
-  const TOTAL = 10;
   let answered = false;
   let finished = false;
 
@@ -216,20 +219,6 @@ if (navToggle) {
   // Leaderboard utils
   function getBoard() { return JSON.parse(localStorage.getItem(LB_KEY) || '[]'); }
   function setBoard(list) { localStorage.setItem(LB_KEY, JSON.stringify(list.slice(0, 20))); }
-  function seedBoardIfEmpty() {
-    const list = getBoard(); if (list.length) return;
-    const names = ['Aisyah', 'Ravi', 'Mei Lin', 'Hafiz', 'Siti', 'Arun', 'Farah', 'Jason', 'Nadia', 'Kumar', 'Wei Chong', 'Amira', 'Daniel', 'Priya'];
-    const seeded = []; const now = Date.now();
-    for (let i = 0; i < 10; i++) {
-      const nm = names[Math.floor(Math.random() * names.length)];
-      const score = Math.floor(Math.random() * 11);
-      const timeLeft = Math.floor(Math.random() * (10 * 60));
-      const date = new Date(now - Math.floor(Math.random() * 7 * 24 * 3600 * 1000)).toISOString();
-      seeded.push({ name: nm, score, timeLeft, date });
-    }
-    seeded.sort((a, b) => (b.score - a.score) || (b.timeLeft - a.timeLeft) || (new Date(a.date) - new Date(b.date)));
-    setBoard(seeded);
-  }
 
   function renderBoard() {
     const list = getBoard();
@@ -238,20 +227,20 @@ if (navToggle) {
       $leaderboard.innerHTML = '<li>No entries yet — be the first!</li>';
       return;
     }
-    list.forEach((row, i) => {
+    list.forEach((row) => {
       const li = document.createElement('li');
       li.textContent = `${row.name} - ${row.score}/10 - ${formatTime(row.timeLeft)} left`;
       $leaderboard.appendChild(li);
     });
   }
 
-
-  // Top 3 with elements/image/images-quiz
+  // Optional podium cards (render only if #podium exists)
   function renderTop3() {
+    if (!$podium) return;
     const list = getBoard().slice(0, 3);
     $podium.innerHTML = '';
     const sources = ['elements/image/images-quiz/Top1.png', 'elements/image/images-quiz/Top2.png', 'elements/image/images-quiz/Top3.png'];
-    const fallback = 'elements/image/images-quiz/Top.png'; // will be used if specific file missing
+    const fallback = 'elements/image/images-quiz/Top.png';
 
     for (let i = 0; i < 3; i++) {
       const row = list[i];
@@ -259,7 +248,6 @@ if (navToggle) {
       const card = document.createElement('div');
       card.className = `podium-card rank-${rank}` + (rank === 1 ? ' sparkle' : '');
 
-      // Build img with onerror fallback
       const imgSrc = sources[i];
       const detail = row ? `${row.name} — ${row.score}/10 — ${formatTime(row.timeLeft)} left` : '—';
 
@@ -272,14 +260,28 @@ if (navToggle) {
     }
   }
 
-  function saveResult(entry) {
-    const list = getBoard();
-    list.push(entry);
-    list.sort((a, b) => (b.score - a.score) || (b.timeLeft - a.timeLeft) || (new Date(a.date) - new Date(b.date)));
-    setBoard(list);
+  // --- NEW: Last Result (renders if #lastResult exists) ---
+  function renderLastResult() {
+    if (!$lastResult) return;
+    const last = JSON.parse(localStorage.getItem(LAST_RESULT_KEY) || 'null');
+    if (!last) {
+      $lastResult.innerHTML = '<h3>Last Result</h3><p>No previous result yet.</p>';
+      return;
+    }
+    $lastResult.innerHTML = `
+      <h3>Last Result</h3>
+      <p><strong>Player:</strong> ${last.name}</p>
+      <p><strong>Score:</strong> ${last.score}/10</p>
+      <p><strong>Time left:</strong> ${formatTime(last.timeLeft)}</p>
+      <p><small>Played at: ${new Date(last.date).toLocaleString()}</small></p>
+    `;
   }
 
-  function setProgressByIndex() { const pct = (idx / QUESTIONS.length) * 100; $progressBar.style.width = pct.toFixed(1) + '%'; }
+  function setProgressByIndex() {
+    const pct = (idx / QUESTIONS.length) * 100;
+    $progressBar.style.width = pct.toFixed(1) + '%';
+  }
+
   function renderQuestion() {
     const q = QUESTIONS[idx];
     $statePill.textContent = q.state;
@@ -320,9 +322,19 @@ if (navToggle) {
     $finalScore.textContent = String(score);
     $finalTime.textContent = formatTime(timeLeftSec);
 
-    saveResult({ name, score, timeLeft: timeLeftSec, date: new Date().toISOString(), reason });
+    // Save to leaderboard
+    const list = getBoard();
+    const result = { name, score, timeLeft: timeLeftSec, date: new Date().toISOString(), reason };
+    list.push(result);
+    list.sort((a, b) => (b.score - a.score) || (b.timeLeft - a.timeLeft) || (new Date(a.date) - new Date(b.date)));
+    setBoard(list);
+
+    // Save "Last Result"
+    localStorage.setItem(LAST_RESULT_KEY, JSON.stringify(result));
+
     renderBoard();
     renderTop3();
+    renderLastResult();
     SFX.finish();
   }
 
@@ -338,6 +350,7 @@ if (navToggle) {
   $readyYes.addEventListener('click', () => {
     $readyOverlay.classList.add('hidden');
     $intro.classList.add('hidden');
+    if ($lastResult) $lastResult.classList.add('hidden');   // hide Last Result card
     $quiz.classList.remove('hidden');
     idx = 0; score = 0; finished = false;
     renderQuestion();
@@ -386,6 +399,8 @@ if (navToggle) {
     $playAgain.addEventListener('click', () => {
       $results.classList.add('hidden');
       $intro.classList.remove('hidden');
+      if ($lastResult) $lastResult.classList.remove('hidden'); // show it again
+      renderLastResult();
       updateTimerLabel(true);
       SFX.click();
     });
@@ -400,8 +415,8 @@ if (navToggle) {
   }
 
   // --- Init ---
-  seedBoardIfEmpty();
   renderBoard();
-  renderTop3();           // show Top 3 (with elements/image/images-quiz) immediately
-  updateTimerLabel(true); // "Ready" until user confirms
+  renderTop3();
+  renderLastResult();          // show last result (if #lastResult exists)
+  updateTimerLabel(true);      // "Ready" until user confirms
 })();

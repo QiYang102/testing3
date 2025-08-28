@@ -212,6 +212,10 @@ nav {
 }
 
 
+#lastResult {
+  margin-top: 20px;
+  box-shadow: none;
+}
 
 .topbar {
   position: sticky;

@@ -694,7 +694,6 @@ body.no-scroll {
     min-height: 100%;
   }
 
-<<<<<<< HEAD
   .left-image,
   .right-image {
     width: 160px;
@@ -709,11 +708,6 @@ body.no-scroll {
   }
 
   .top-place>p {
-=======
-  .left-image, .right-image { width: 160px; height: 100px; border-radius: 30px; }
-  .pic-container { gap: 24px;  overflow: hidden; }
-  .top-place > p {
->>>>>>> a5bbb86da72ce459bdc96a557fe08e64e2e11019
     position: absolute;
     font-size: 28pt;
     top: 100px;
