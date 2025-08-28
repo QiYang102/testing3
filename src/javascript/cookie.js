@@ -54,17 +54,14 @@ function initCurrencyPref() {
   const sel = document.getElementById("currencySelect");
   if (!sel) return;
 
-  // load
+  // load saved choice (if any)
   const saved = getCookie("currency_pref");
-  if (saved) {
-    const opt = [...sel.options].find(o => o.value === saved);
-    if (opt) sel.value = saved;
-  }
+  if (saved) sel.value = saved;
 
-  // save
-  sel.addEventListener("change", () => {
-    if (userConsentedAll()) setCookie("currency_pref", sel.value, 365);
-  }, { passive: true });
+  // apply prices for the current value (saved or default MYR)
+  updatePricesForCurrency(sel.value);
+
+  // save on change only if 'all' consent -> handled by the listener above
 }
 
 // 2) last_state_tab: remember last visible .state section (by id)

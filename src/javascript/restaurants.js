@@ -564,32 +564,49 @@ if (navToggle) {
 
 
 // ---------- CURRENCY CONVERSION ----------
-const currencySelect = document.getElementById("currencySelect");
 
-currencySelect?.addEventListener("change", () => {
-  const selected = currencySelect.value;
+// --- Currency display helper ---
+const CURRENCY_SYMBOL = { MYR: "RM", USD: "$", SGD: "S$", EUR: "€", JPY: "¥", GBP: "£" };
 
-  if (selected === "MYR") {
-    // Reset back to base MYR prices
+function updatePricesForCurrency(curr) {
+  const symbol = CURRENCY_SYMBOL[curr] || curr;
+
+  // MYR = no fetch needed
+  if (curr === "MYR") {
     document.querySelectorAll(".card-price").forEach(el => {
       const baseMYR = parseFloat(el.dataset.myr);
-      el.textContent = `RM ${baseMYR.toFixed(2)}`;
+      el.textContent = `Average Price: ${symbol} ${baseMYR.toFixed(2)}`;
     });
     return;
   }
 
-  // Otherwise, fetch rates for the selected currency
-  $.get(`https://open.er-api.com/v6/latest/${selected}`, function(data){
-    const rateToMYR = data.rates.MYR;
+  // Convert MYR -> selected currency using ER API (rates are "MYR per <base>")
+  fetch(`https://open.er-api.com/v6/latest/${curr}`)
+    .then(r => r.json())
+    .then(data => {
+      const rateToMYR = data?.rates?.MYR;              // e.g., 1 USD = 4.7 MYR
+      if (!rateToMYR) return;                          // guard
 
-    document.querySelectorAll(".card-price").forEach(el => {
-      const baseMYR = parseFloat(el.dataset.myr); // always store original MYR
-      const converted = (baseMYR / rateToMYR).toFixed(2);
-      el.textContent = `${selected} ${converted}`;
-    });
-  });
+      document.querySelectorAll(".card-price").forEach(el => {
+        const baseMYR = parseFloat(el.dataset.myr);
+        const converted = (baseMYR / rateToMYR).toFixed(2); // MYR -> curr
+        el.textContent = `Average Price: ${symbol} ${converted}`;
+      });
+    })
+    .catch(console.error);
+}
+
+
+
+const currencySelect = document.getElementById("currencySelect");
+
+currencySelect?.addEventListener("change", () => {
+  // Save the preference (only if user consented)
+  if (userConsentedAll()) setCookie("currency_pref", currencySelect.value, 365);
+
+  // Always reflect the UI immediately
+  updatePricesForCurrency(currencySelect.value);
 });
-
 
 
 
