@@ -280,6 +280,15 @@ footer a:hover {
     text-decoration: underline;
 }
 
+
+.google-login {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px; 
+}
+
+
+
 /* Phone */
 @media (max-width: 768px) {
 
