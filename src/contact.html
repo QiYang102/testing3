@@ -11,46 +11,46 @@
 </head>
 
 <body>
-<nav>
-  <div class="logo">
-    <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
-  </div>
-
-  <!-- Burger toggle -->
-  <label class="nav-toggle burger" for="burger">
-    <input type="checkbox" id="burger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
-
-  <div class="links nav-panel">
-    <a href="main2.html">Home</a>
-    <a href="aboutus.html">About Us</a>
-    <a href="login.html">Login</a>
-
-    <div class="menu">
-      <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
-      <div class="menu-list" role="menu">
-        <a role="menuitem" href="perak.html">Perak</a>
-        <a role="menuitem" href="penang.html">Penang</a>
-        <a role="menuitem" href="kedah.html">Kedah</a>
-        <a role="menuitem" href="kelantan.html">Kelantan</a>
-      </div>
+  <nav>
+    <div class="logo">
+      <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
     </div>
 
-    <div class="menu">
-      <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>
-      <div class="menu-list" role="menu">
-        <a role="menuitem" href="favourite.html">Favourite</a>
-        <a role="menuitem" href="ranking.html">Best Food in 2025</a>
-        <a role="menuitem" href="quiz.html">Quiz</a>
-        <a role="menuitem" href="restaurants.html">Restaurants</a>
-        <a role="menuitem" href="contact.html" class="active">Contact Us</a>
+    <!-- Burger toggle -->
+    <label class="nav-toggle burger" for="burger">
+      <input type="checkbox" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <div class="links nav-panel">
+      <a href="main2.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="login.html">Login</a>
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="perak.html">Perak</a>
+          <a role="menuitem" href="penang.html">Penang</a>
+          <a role="menuitem" href="kedah.html">Kedah</a>
+          <a role="menuitem" href="kelantan.html">Kelantan</a>
+        </div>
+      </div>
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="favourite.html">Favourite</a>
+          <a role="menuitem" href="ranking.html">Best Food in 2025</a>
+          <a role="menuitem" href="quiz.html">Quiz</a>
+          <a role="menuitem" href="restaurants.html">Restaurants</a>
+          <a role="menuitem" href="contact.html" class="active">Contact Us</a>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
 
   <!--Code-->
@@ -121,6 +121,7 @@
         <div class="form-group">
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Tell us what's on your mind…"></textarea>
+          <div id="messageHint" class="hint"></div>
         </div>
 
         <!-- API status line (minimal visual change, small text below submit) -->

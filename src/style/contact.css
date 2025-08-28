@@ -183,6 +183,13 @@ body {
   animation: float 8s ease-in-out infinite 0.5s;
 }
 
+.hint {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #D94F43;   /* brand accent color */
+  display: none;    /* hidden by default */
+}
+
 @keyframes float {
   0% {
     transform: translateY(0) rotate(0deg);

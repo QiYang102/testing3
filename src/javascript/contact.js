@@ -141,3 +141,25 @@ navLinks.forEach(link => {
 });
 
 
+
+
+const textarea = document.getElementById("message");
+const hint = document.getElementById("messageHint");
+
+// observe size changes
+const resizeObserver = new ResizeObserver(entries => {
+  for (let entry of entries) {
+    const height = entry.target.clientHeight;
+    if (height > 3000) { // threshold: 200px tall
+      hint.style.display = "block";
+      hint.textContent = "Wow, you’ve really got a lot to say 😆";
+    } else {
+      hint.style.display = "none";
+    }
+  }
+});
+
+resizeObserver.observe(textarea);
+
+
+
