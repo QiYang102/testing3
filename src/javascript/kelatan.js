@@ -724,7 +724,7 @@ const foodItems = [
         id: "kn1",
         name: "Nasi Kerabu",
         image: "elements/image/images-kelantan/musteatfood/nasikerabu.jpg",
-        desc: "Fragrant herb rice often naturally blue from butterfly pea served with fresh ulam, salted egg, keropok, toasted coconut, budu, and a choice of protein.",
+        desc: "Fragrant herb rice often naturally blue from butterfly pea served with fresh ulam, salted egg, keropok.",
         category: "main-dishes"
     },
     {
@@ -738,7 +738,7 @@ const foodItems = [
         id: "kn3",
         name: "Nasi Tumpang",
         image: "elements/image/images-kelantan/musteatfood/nasitumpang.jpg",
-        desc: "Uniquely Kelantanese dish where rice and assorted side dishes are layered inside a banana leaf, shaped into a tall cone.",
+        desc: "Uniquely Kelantanese dish where rice and assorted side dishes are layered inside a banana leaf.",
         category: "main-dishes"
     },
     {
@@ -752,28 +752,28 @@ const foodItems = [
         id: "kn5",
         name: "Local Carbonated Drink",
         image: "elements/image/images-kelantan/musteatfood/localcarbonateddrink.jpg",
-        desc: "A nostalgic Kelantanese carbonated beverage, popular at local stalls and markets, offering a refreshing sweetness with a fizzy kick.",
+        desc: "A nostalgic Kelantanese carbonated beverage, popular at local stalls.",
         category: "beverages"
     },
     {
         id: "kn6",
         name: "Buah Salak (Snake Fruit)",
         image: "elements/image/images-kelantan//musteatfood/buahsalak.png",
-        desc: "Known as snake fruit, well-known of its firm and crunchy flesh, offering a sweet yet slightly tangy flavor that makes it a popular seasonal treat.",
+        desc: "Known as snake fruit, well-known of its firm and crunchy flesh, offering a sweet yet slightly flavor.",
         category: "snacks"
     },
     {
         id: "kn7",
         name: "Kuih Akok",
         image: "elements/image/images-kelantan/musteatfood/kuihakok.jpg",
-        desc: "Kelantanese traditional dessert known for its soft, custard-like texture and rich caramel flavor, it is often enjoyed as a tea-time snack.",
+        desc: "Kelantanese traditional dessert known for its soft, custard-like texture.",
         category: "snacks"
     },
     {
         id: "kn8",
         name: "Lok Ching",
         image: "elements/image/images-kelantan/musteatfood/lokching.jpg",
-        desc: "Kelantanese street snack served with a choice of sweet chili, peanut, or spicy dipping sauces, it is a favorite among locals, especially at night markets and fairs.",
+        desc: "Kelantanese street snack served with a choice of sweet chili, peanut, or spicy dipping sauces.",
         category: "sides"
     },
 ];

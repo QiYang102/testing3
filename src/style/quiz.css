@@ -458,11 +458,11 @@ nav {
 
 .btn.ghost {
   background: #fff;
-  border-color: #ddd;
+  border-color: #605f5f;
 }
 
 .btn.ghost:hover {
-  border-color: #bbb;
+  border-color: #000000;
 }
 
 .btn[disabled] {

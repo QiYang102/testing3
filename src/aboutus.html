@@ -13,46 +13,46 @@
 
 <body>
   <!-- Top Navigation (kept consistent with other pages) -->
-<nav>
-  <div class="logo">
-    <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
-  </div>
-
-  <!-- Burger toggle -->
-  <label class="nav-toggle burger" for="burger">
-    <input type="checkbox" id="burger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
-
-  <div class="links nav-panel">
-    <a href="main2.html">Home</a>
-    <a href="aboutus.html" class="active">About Us</a>
-    <a href="login.html">Login</a>
-
-    <div class="menu">
-      <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
-      <div class="menu-list" role="menu">
-        <a role="menuitem" href="perak.html">Perak</a>
-        <a role="menuitem" href="penang.html">Penang</a>
-        <a role="menuitem" href="kedah.html">Kedah</a>
-        <a role="menuitem" href="kelantan.html">Kelantan</a>
-      </div>
+  <nav>
+    <div class="logo">
+      <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
     </div>
 
-    <div class="menu">
-      <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>
-      <div class="menu-list" role="menu">
-        <a role="menuitem" href="favourite.html">Favourite</a>
-        <a role="menuitem" href="ranking.html">Best Food in 2025</a>
-        <a role="menuitem" href="quiz.html">Quiz</a>
-        <a role="menuitem" href="restaurants.html">Restaurants</a>
-        <a role="menuitem" href="contact.html">Contact Us</a>
+    <!-- Burger toggle -->
+    <label class="nav-toggle burger" for="burger">
+      <input type="checkbox" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <div class="links nav-panel">
+      <a href="main2.html">Home</a>
+      <a href="aboutus.html" class="active">About Us</a>
+      <a href="login.html">Login</a>
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="perak.html">Perak</a>
+          <a role="menuitem" href="penang.html">Penang</a>
+          <a role="menuitem" href="kedah.html">Kedah</a>
+          <a role="menuitem" href="kelantan.html">Kelantan</a>
+        </div>
+      </div>
+
+      <div class="menu">
+        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>
+        <div class="menu-list" role="menu">
+          <a role="menuitem" href="favourite.html">Favourite</a>
+          <a role="menuitem" href="ranking.html">Best Food in 2025</a>
+          <a role="menuitem" href="quiz.html">Quiz</a>
+          <a role="menuitem" href="restaurants.html">Restaurants</a>
+          <a role="menuitem" href="contact.html">Contact Us</a>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- Hero -->
   <header class="hero">
@@ -89,7 +89,8 @@
       <p>
         Makan Island started as a personal map of must-try stalls shared among friends.
         It grew into a community project, then a platform — with structured pages like
-        <a href="Kelantan.html">Kelantan Food Street</a> ， <a href="Penang.html">Penang Food Street</a> , <a href="Kedah.html">Kedah Food Street</a> and <a href="Perak.html">Perak Food Street</a> interactive lists like
+        <a href="Kelantan.html">Kelantan Food Street</a> ， <a href="Penang.html">Penang Food Street</a> , <a
+          href="Kedah.html">Kedah Food Street</a> and <a href="Perak.html">Perak Food Street</a> interactive lists like
         <a href="favourite.html">Favourites</a>. Today, we’re building a friendly ecosystem for
         foodies, travellers, and small businesses to connect.
       </p>
@@ -150,34 +151,48 @@
       <h2>Meet the Team</h2>
       <div class="grid three-col">
         <div class="person">
-          <img src="elements/image/images-aboutus/cwn.jpg" alt="Food Scout avatar">
+          <div class="emoji-wrap">
+            <img src="elements/image/images-aboutus/cwn.jpg" alt="Food Scout avatar">
+          </div>
           <h3>Food Scout</h3>
           <p>Finds stalls worth your detour.</p>
         </div>
         <div class="person">
-          <img src="elements/image/images-aboutus/fyq.jpg" alt="Storyteller avatar">
+          <div class="emoji-wrap">
+            <img src="elements/image/images-aboutus/fyq.jpg" alt="Storyteller avatar">
+          </div>
           <h3>Storyteller</h3>
           <p>Turns flavours into culture and context.</p>
         </div>
         <div class="person">
-          <img src="elements/image/images-aboutus/tqy.jpg" alt="Mapmaker avatar">
+          <div class="emoji-wrap">
+            <img src="elements/image/images-aboutus/tqy.jpg" alt="Mapmaker avatar">
+          </div>
           <h3>Mapmaker</h3>
           <p>Crafts simple routes and smart filters.</p>
         </div>
         <div class="person">
-          <img src="elements/image/images-aboutus/wym.jpg" alt="Designer avatar">
+          <div class="emoji-wrap">
+            <img src="elements/image/images-aboutus/wym.jpg" alt="Designer avatar">
+          </div>
           <h3>Designer</h3>
           <p>Shapes visuals, layouts, and user flow into simple elegance.</p>
         </div>
       </div>
     </section>
 
+
     <!-- CTA -->
     <section class="section cta">
       <div class="cta-card">
         <h2>Partner with Us</h2>
         <p>Are you a local eatery, tourism board, or content creator? Let’s bring more people to the right tables.</p>
-        <a class="btn" href="contact.html">Get in touch</a>
+        <a href="contact.html" class="btn-cube">
+          <div class="cube">
+            <span class="side front">Get in Touch</span>
+            <span class="side top">Let’s Talk</span>
+          </div>
+        </a>
       </div>
     </section>
   </main>
@@ -187,7 +202,7 @@
     <p>© 2025 Makan Island. All rights reserved.</p>
     <p><a href="privacy-policy.html">Privacy Policy</a> • <a href="terms-of-use.html">Terms of Use</a></p>
   </footer>
-  
+
   <script src="javascript/cookie.js"></script>
   <script src="javascript/aboutus.js" defer></script>
 </body>

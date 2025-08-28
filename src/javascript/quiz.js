@@ -152,6 +152,36 @@ navLinks.forEach(link => {
   let score = 0;
   let answered = false;
   let finished = false;
+  let order = [];   // shuffled index order for QUESTIONS
+  const curQIndex = () =>
+    (order && order.length === QUESTIONS.length ? order[idx] : idx);
+
+  // --- Shuffle API (Random.org with secure local fallback) ---
+  async function getShuffledOrder(n) {
+    const url = `https://www.random.org/sequences/?min=0&max=${n - 1}&col=1&format=plain&rnd=new`;
+    try {
+      const res = await fetch(url, { mode: 'cors', cache: 'no-store' });
+      if (res.ok) {
+        const text = (await res.text()).trim();
+        const order = text.split(/\s+/).map(Number);
+        if (order.length === n && order.every(x => Number.isInteger(x) && x >= 0 && x < n)) {
+          return order;
+        }
+      }
+    } catch (_) {
+      // fall through to local shuffle
+    }
+
+    // Local Fisher–Yates using crypto RNG (fallback)
+    const order = Array.from({ length: n }, (_, i) => i);
+    for (let i = n - 1; i > 0; i--) {
+      const r = crypto.getRandomValues(new Uint32Array(1))[0];
+      const j = r % (i + 1);
+      [order[i], order[j]] = [order[j], order[i]];
+    }
+    return order;
+  }
+
 
   // --- Questions (10) ---
   const QUESTIONS = [
@@ -294,7 +324,8 @@ navLinks.forEach(link => {
   }
 
   function renderQuestion() {
-    const q = QUESTIONS[idx];
+    const qi = curQIndex();
+    const q = QUESTIONS[qi];
     $statePill.textContent = q.state;
     $qIndex.textContent = (idx + 1);
     $qText.textContent = q.q;
@@ -358,12 +389,15 @@ navLinks.forEach(link => {
     SFX.click();
   });
 
-  $readyYes.addEventListener('click', () => {
+  $readyYes.addEventListener('click', async () => {
     $readyOverlay.classList.add('hidden');
     $intro.classList.add('hidden');
-    if ($lastResult) $lastResult.classList.add('hidden');   // hide Last Result card
+    if ($lastResult) $lastResult.classList.add('hidden');
     $quiz.classList.remove('hidden');
+
+    order = await getShuffledOrder(QUESTIONS.length);   // <-- new
     idx = 0; score = 0; finished = false;
+
     renderQuestion();
     startCountdown();
     SFX.next();
@@ -381,7 +415,7 @@ navLinks.forEach(link => {
     if (!sel) { alert('Please choose an answer.'); return; }
 
     const pick = Number(sel.value);
-    const q = QUESTIONS[idx];
+    const q = QUESTIONS[curQIndex()];
     const ok = pick === q.answer;
     if (ok) score++;
 

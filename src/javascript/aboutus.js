@@ -89,3 +89,56 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.8 });
 
 document.querySelectorAll('.timeline .dot').forEach(d => observer.observe(d));
+
+
+// Fallback list (used if API fails or is slow)
+const fallbackEmojis = ["😋", "🍜", "🍤", "🍡", "🍦", "🥟", "🍢", "🍽️", "🍲"];
+
+// Get a random emoji from API (EmojiHub) with fallback
+async function getRandomEmoji() {
+  try {
+    const res = await fetch("https://emojihub.yurace.pro/api/random", { cache: "no-store" });
+    if (!res.ok) throw new Error("Bad response");
+    const data = await res.json();
+    // EmojiHub returns htmlCode like ["&#x1F60B;"], which we can inject safely as HTML
+    if (data && Array.isArray(data.htmlCode) && data.htmlCode[0]) {
+      return { type: "html", value: data.htmlCode[0] };
+    }
+  } catch (err) {
+    // fall through to local fallback
+  }
+  // Local fallback
+  const value = fallbackEmojis[Math.floor(Math.random() * fallbackEmojis.length)];
+  return { type: "text", value };
+}
+
+document.querySelectorAll('.emoji-wrap img').forEach(img => {
+  img.addEventListener('mouseenter', () => spawnEmoji(img));
+  img.addEventListener('click', () => spawnEmoji(img));
+});
+
+async function spawnEmoji(img) {
+  const wrap = img.parentElement;
+  const emoji = document.createElement('span');
+  emoji.className = 'emoji';
+
+  // Fetch from API (with fallback)
+  const rnd = await getRandomEmoji();
+  if (rnd.type === "html") {
+    emoji.innerHTML = rnd.value;   // API provides an HTML entity (e.g., &#x1F60B;)
+  } else {
+    emoji.textContent = rnd.value; // fallback: plain unicode character
+  }
+
+  // random horizontal offset
+  const offset = Math.random() * 40 - 20;
+  emoji.style.left = (img.offsetWidth / 2 + offset) + "px";
+  emoji.style.top = "0px";
+
+  wrap.appendChild(emoji);
+
+  // remove after animation
+  setTimeout(() => emoji.remove(), 1000);
+}
+
+

@@ -764,35 +764,35 @@ const foodItems = [
     id: "pk1",
     name: "Nasi Kandar",
     image: "elements/image/images-perak/food/Nasi Kandar.avif",
-    desc: "Steamed rice served with a variety of curries, fried chicken, squid, vegetables, and thick gravy. Famous in Ipoh and across Perak.",
+    desc: "Steamed rice served with a variety of curries, fried chicken, squid, vegetables, and thick gravy.",
     category: "main-dishes"
   },
   {
     id: "pk2",
     name: "Ipoh Bean Sprout Chicken",
     image: "elements/image/images-perak/food/Ipoh Bean Sprout Chicken.jpg",
-    desc: "Poached chicken served with crunchy bean sprouts, soy sauce, and sesame oil. A simple yet iconic Ipoh dish.",
+    desc: "Poached chicken served with crunchy bean sprouts, soy sauce, and sesame oil.",
     category: "main-dishes"
   },
   {
     id: "pk3",
     name: "Mee Rebus Mamak",
     image: "elements/image/images-perak/food/Mee Rebus Mamak.jpg",
-    desc: "Yellow noodles in a thick, spicy-sweet potato gravy, garnished with boiled egg, tofu, bean sprouts, and lime.",
+    desc: "Yellow noodles in a thick, spicy-sweet potato gravy, garnished with boiled egg, tofu, bean sprouts.",
     category: "main-dishes"
   },
   {
     id: "pk4",
     name: "Ipoh White Coffee",
     image: "elements/image/images-perak/food/Ipoh White Coffee.jpg",
-    desc: "Smooth, aromatic coffee made with beans roasted in margarine and served with condensed milk. Ipoh’s world-famous drink.",
+    desc: "Smooth, aromatic coffee made with beans roasted in margarine and served with condensed milk.",
     category: "beverages"
   },
   {
     id: "pk5",
     name: "Air Mata Kucing",
     image: "elements/image/images-perak/food/Air Mata Kucing.webp",
-    desc: "Refreshing herbal drink made from longan, winter melon, and luo han guo, often sold in Perak night markets.",
+    desc: "Refreshing herbal drink made from longan, winter melon, and luo han guo.",
     category: "beverages"
   },
   {
@@ -820,21 +820,21 @@ const foodItems = [
     id: "pk9",
     name: "Popiah Basah (Fresh Spring Rolls)",
     image: "elements/image/images-perak/food/Popiah Basah (Fresh Spring Rolls).JPG",
-    desc: "Fresh spring rolls filled with turnip, carrots, bean sprouts, and peanuts, wrapped in a soft crepe skin.",
+    desc: "Fresh spring rolls filled with turnip, carrots, bean sprouts, and peanuts, wrapped.",
     category: "sides"
   },
   {
     id: "pk10",
     name: "Ipoh Hor Fun",
     image: "elements/image/images-perak/food/Ipoh Hor Fun.jpg",
-    desc: "Flat rice noodles in a silky chicken and prawn broth, topped with shredded chicken and prawns. A comforting Ipoh specialty.",
+    desc: "Flat rice noodles in a silky chicken and prawn broth, topped with shredded chicken and prawns.",
     category: "main-dishes"
   },
   {
     id: "pk11",
     name: "Satay Perak",
     image: "elements/image/images-perak/food/Satay Perak.jpeg",
-    desc: "Skewered, marinated meat grilled over charcoal and served with a rich peanut sauce. Distinctively spiced Perak-style satay.",
+    desc: "Skewered, marinated meat grilled over charcoal and served with a rich peanut sauce. ",
     category: "sides"
   },
   {
@@ -848,7 +848,7 @@ const foodItems = [
     id: "pk13",
     name: "Ipoh Dim Sum",
     image: "elements/image/images-perak/food/Ipoh Dim Sum.webp",
-    desc: "Traditional Chinese dim sum including har gow, siu mai, and char siu bao, reflecting Ipoh’s Cantonese influence.",
+    desc: "Traditional Chinese dim sum including har gow, siu mai, and char siu bao.",
     category: "sides"
   },
   {

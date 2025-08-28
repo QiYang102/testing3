@@ -831,9 +831,9 @@ const foodItems = [
   },
   {
     id: "pg3",
-    name: "Hokkien Mee (Penang Prawn Mee)s",
+    name: "Hokkien Mee",
     image: "elements/image/images-penang/mef/main-dishes/hokkien-mee.png",
-    desc: "Thick noodles braised in a rich, dark broth with pork, squid, and hard-boiled egg.",
+    desc: "Thick noodles braised in a rich, dark broth with pork, squid, hard-boiled egg.",
     category: "main-dishes"
   },
   {
@@ -854,14 +854,14 @@ const foodItems = [
     id: "pg6",
     name: "Apom Manis",
     image: "elements/image/images-penang/mef/snacks/apom-manis.png",
-    desc: "Soft, fluffy pancakes made from fermented rice batter, topped with sugar and grated coconut.",
+    desc: "Soft, fluffy pancakes made from fermented rice batter, topped with sugar.",
     category: "snacks"
   },
   {
     id: "pg7",
     name: "Onde-Onde (Kuih Koci)",
     image: "elements/image/images-penang/mef/snacks/onde-onde.png",
-    desc: "Sticky rice balls filled with palm sugar and rolled in grated coconut — sweet, warm, and fragrant.",
+    desc: "Sticky rice balls filled with palm sugar and rolled in grated coconut.",
     category: "snacks"
   },
   {
@@ -903,7 +903,7 @@ const foodItems = [
     id: "pg13",
     name: "Chee Cheong Fun",
     image: "elements/image/images-penang/mef/sides/chee-cheong-fun.png",
-    desc: "Rice noodle rolls filled with shrimp or char siu, served with sweet soy and chili sauce.",
+    desc: "Rice noodle rolls filled with shrimp or char siu, served with sweet soy.",
     category: "sides"
   },
   {
