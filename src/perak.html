@@ -15,13 +15,18 @@
 <body>
   <!-- Section 1 -->
   <header>
-    <nav class="site-nav">
+<nav class="site-nav">
       <div class="logo">
         <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
       </div>
 
-      <!-- NEW: mobile toggle button -->
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <!-- ✅ Burger replaces old nav-toggle -->
+      <label class="nav-toggle burger" for="burger">
+        <input type="checkbox" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
 
       <!-- WRAP existing links -->
       <div class="links nav-panel">
@@ -32,13 +37,12 @@
         <div class="menu">
           <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
           <div class="menu-list" role="menu">
-            <a role="menuitem" href="perak.html">Perak</a>
-            <a role="menuitem" href="penang.html">Penang</a>
-            <a role="menuitem" href="kedah.html">Kedah</a>
+            <a role="menuitem" href="perak.html" class="active">Perak</a>
+            <a role="menuitem" href="Penang.html">Penang</a>
+            <a role="menuitem" href="Kedah.html">Kedah</a>
             <a role="menuitem" href="kelantan.html">Kelantan</a>
           </div>
         </div>
-
 
         <div class="menu">
           <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>

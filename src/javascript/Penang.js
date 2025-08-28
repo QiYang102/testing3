@@ -5,14 +5,12 @@ document.querySelectorAll('.menu-toggle').forEach((btn) => {
     const menu = btn.closest('.menu');
     const isOpen = menu.classList.contains('open');
 
-    // close others
     document.querySelectorAll('.menu.open').forEach(m => {
       m.classList.remove('open');
       const t = m.querySelector('.menu-toggle');
       if (t) t.setAttribute('aria-expanded', 'false');
     });
 
-    // toggle this one
     if (!isOpen) {
       menu.classList.add('open');
       btn.setAttribute('aria-expanded', 'true');
@@ -22,7 +20,7 @@ document.querySelectorAll('.menu-toggle').forEach((btn) => {
   });
 });
 
-// click outside to close
+// close dropdown when clicking outside
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.menu')) {
     document.querySelectorAll('.menu.open').forEach(m => {
@@ -33,7 +31,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Esc to close
+// Esc key closes dropdown
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     document.querySelectorAll('.menu.open').forEach(m => {
@@ -44,32 +42,44 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Mobile hamburger toggle
-const nav = document.querySelector('nav');
-const navToggle = document.querySelector('.nav-toggle');
-const navPanel = document.querySelector('.nav-panel');
+// Highlight parent dropdown if a child is active
+document.querySelectorAll('.menu').forEach(menu => {
+  const activeChild = menu.querySelector('.menu-list a.active');
+  if (activeChild) {
+    const toggleBtn = menu.querySelector('.menu-toggle');
+    if (toggleBtn) toggleBtn.classList.add('active');
+  }
+});
 
-if (navToggle) {
-  navToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const open = nav.classList.toggle('nav--open');
-    navToggle.setAttribute('aria-expanded', String(open));
-  });
+// === Burger toggle for mobile nav ===
+const burgerInput = document.getElementById("burger");
+const nav = document.querySelector(".site-nav");
 
-  // close panel on outside click / Esc
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('nav')) {
-      nav.classList.remove('nav--open');
-      navToggle.setAttribute('aria-expanded', 'false');
+burgerInput.addEventListener("change", () => {
+  if (burgerInput.checked) {
+    nav.classList.add("nav--open");
+  } else {
+    nav.classList.remove("nav--open");
+  }
+});
+
+// === Active link highlight ===
+const navLinks = document.querySelectorAll('.links a, .menu-list a');
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    navLinks.forEach(l => l.classList.remove('active'));
+    document.querySelectorAll('.menu-toggle').forEach(mt => mt.classList.remove('active'));
+
+    e.target.classList.add('active');
+
+    const parentMenu = e.target.closest('.menu');
+    if (parentMenu) {
+      const toggleBtn = parentMenu.querySelector('.menu-toggle');
+      if (toggleBtn) toggleBtn.classList.add('active');
     }
   });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      nav.classList.remove('nav--open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-}
+});
+
 
 
 // Verify User

@@ -15,14 +15,18 @@
       <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
     </div>
 
-    <!-- NEW: mobile toggle button -->
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <!-- Burger toggle -->
+    <label class="nav-toggle burger" for="burger">
+      <input type="checkbox" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
 
-    <!-- WRAP existing links -->
     <div class="links nav-panel">
       <a href="main2.html">Home</a>
       <a href="aboutus.html">About Us</a>
-      <a href="login.html">Login</a>
+      <a href="login.html" class="active">Login</a>
 
       <div class="menu">
         <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Malaysia ▾</button>
@@ -33,7 +37,6 @@
           <a role="menuitem" href="kelantan.html">Kelantan</a>
         </div>
       </div>
-
 
       <div class="menu">
         <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>

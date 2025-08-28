@@ -17,10 +17,14 @@
       <img id="logoE" src="elements/image/image 27.png" alt="Makan Island">
     </div>
 
-    <!-- NEW: mobile toggle button -->
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <!-- Burger toggle -->
+    <label class="nav-toggle burger" for="burger">
+      <input type="checkbox" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
 
-    <!-- WRAP existing links -->
     <div class="links nav-panel">
       <a href="main2.html">Home</a>
       <a href="aboutus.html">About Us</a>
@@ -36,11 +40,10 @@
         </div>
       </div>
 
-
       <div class="menu">
         <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">Others ▾</button>
         <div class="menu-list" role="menu">
-          <a role="menuitem" href="favourite.html">Favourite</a>
+          <a role="menuitem" href="favourite.html" class="active">Favourite</a>
           <a role="menuitem" href="ranking.html">Best Food in 2025</a>
           <a role="menuitem" href="quiz.html">Quiz</a>
           <a role="menuitem" href="restaurants.html">Restaurants</a>
